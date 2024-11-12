@@ -1,0 +1,451 @@
+Year,State,fertility_rate,covid_year
+2022,Alabama,58.7,0
+2022,Alaska,64.9,0
+2022,Arizona,54.9,0
+2022,Arkansas,60.2,0
+2022,California,52.8,0
+2022,Colorado,51.5,0
+2022,Connecticut,50.7,0
+2022,Delaware,44.9,0
+2022,Florida,55.6,0
+2022,Georgia,56.0,0
+2022,Hawaii,59.3,0
+2022,Idaho,58.4,0
+2022,Illinois,51.8,0
+2022,Indiana,59.7,0
+2022,Iowa,59.9,0
+2022,Kansas,60.3,0
+2022,Kentucky,61.1,0
+2022,Louisiana,61.8,0
+2022,Maine,49.7,0
+2022,Maryland,56.9,0
+2022,Massachusetts,48.7,0
+2022,Michigan,54.0,0
+2022,Minnesota,58.2,0
+2022,Mississippi,59.7,0
+2022,Missouri,57.7,0
+2022,Montana,53.2,0
+2022,Nebraska,63.6,0
+2022,Nevada,53.2,0
+2022,New Hampshire,47.9,0
+2022,New Jersey,58.7,0
+2022,New Mexico,53.1,0
+2022,New York,53.6,0
+2022,North Carolina,57.6,0
+2022,North Dakota,62.0,0
+2022,Ohio,57.3,0
+2022,Oklahoma,60.4,0
+2022,Oregon,47.3,0
+2022,Pennsylvania,53.3,0
+2022,Rhode Island,47.5,0
+2022,South Carolina,57.0,0
+2022,South Dakota,66.5,0
+2022,Tennessee,59.3,0
+2022,Texas,61.9,0
+2022,Utah,61.3,0
+2022,Vermont,44.3,0
+2022,Virginia,55.6,0
+2022,Washington,53.3,0
+2022,West Virginia,54.0,0
+2022,Wisconsin,54.2,0
+2022,Wyoming,55.4,0
+2021,Alabama,59.5,0
+2021,Alaska,64.9,0
+2021,Arizona,55.5,0
+2021,Arkansas,61.7,0
+2021,California,52.8,0
+2021,Colorado,52.5,0
+2021,Connecticut,52.1,0
+2021,Delaware,56.5,0
+2021,Florida,54.9,0
+2021,Georgia,55.9,0
+2021,Hawaii,59.2,0
+2021,Idaho,60.7,0
+2021,Illinois,53.0,0
+2021,Indiana,60.2,0
+2021,Iowa,60.8,0
+2021,Kansas,61.0,0
+2021,Kentucky,60.8,0
+2021,Louisiana,62.7,0
+2021,Maine,49.9,0
+2021,Maryland,56.4,0
+2021,Massachusetts,49.0,0
+2021,Michigan,55.4,0
+2021,Minnesota,58.6,0
+2021,Mississippi,60.7,0
+2021,Missouri,58.4,0
+2021,Montana,54.8,0
+2021,Nebraska,64.4,0
+2021,Nevada,54.8,0
+2021,New Hampshire,49.9,0
+2021,New Jersey,58.0,0
+2021,New Mexico,52.9,0
+2021,New York,54.1,0
+2021,North Carolina,58.1,0
+2021,North Dakota,66.7,0
+2021,Ohio,57.9,0
+2021,Oklahoma,61.5,0
+2021,Oregon,48.9,0
+2021,Pennsylvania,54.7,0
+2021,Rhode Island,48.3,0
+2021,South Carolina,57.5,0
+2021,South Dakota,68.6,0
+2021,Tennessee,59.8,0
+2021,Texas,60.7,0
+2021,Utah,63.6,0
+2021,Vermont,44.9,0
+2021,Virginia,56.1,0
+2021,Washington,54.2,0
+2021,West Virginia,54.7,0
+2021,Wisconsin,55.7,0
+2021,Wyoming,57.5,0
+2020,Alabama,60.6,1
+2020,Alaska,65.7,1
+2020,Arizona,54.0,1
+2020,Arkansas,60.7,1
+2020,California,52.4,1
+2020,Colorado,51.5,1
+2020,Connecticut,49.9,1
+2020,Delaware,57.0,1
+2020,Florida,53.4,1
+2020,Georgia,55.7,1
+2020,Hawaii,61.1,1
+2020,Idaho,60.9,1
+2020,Illinois,53.8,1
+2020,Indiana,59.8,1
+2020,Iowa,60.4,1
+2020,Kansas,61.1,1
+2020,Kentucky,60.8,1
+2020,Louisiana,62.2,1
+2020,Maine,49.2,1
+2020,Maryland,57.7,1
+2020,Massachusetts,47.6,1
+2020,Michigan,55.6,1
+2020,Minnesota,58.3,1
+2020,Mississippi,61.0,1
+2020,Missouri,58.7,1
+2020,Montana,54.3,1
+2020,Nebraska,64.7,1
+2020,Nevada,54.8,1
+2020,New Hampshire,47.7,1
+2020,New Jersey,58.6,1
+2020,New Mexico,54.6,1
+2020,New York,54.6,1
+2020,North Carolina,56.2,1
+2020,North Dakota,67.4,1
+2020,Ohio,58.3,1
+2020,Oklahoma,61.0,1
+2020,Oregon,47.8,1
+2020,Pennsylvania,54.9,1
+2020,Rhode Island,48.7,1
+2020,South Carolina,55.9,1
+2020,South Dakota,66.7,1
+2020,Tennessee,58.5,1
+2020,Texas,60.2,1
+2020,Utah,64.1,1
+2020,Vermont,44.7,1
+2020,Virginia,55.8,1
+2020,Washington,54.0,1
+2020,West Virginia,55.3,1
+2020,Wisconsin,55.4,1
+2020,Wyoming,56.4,1
+2019,Alabama,61.7,0
+2019,Alaska,68.1,0
+2019,Arizona,56.7,0
+2019,Arkansas,63.2,0
+2019,California,55.4,0
+2019,Colorado,53.3,0
+2019,Connecticut,51.1,0
+2019,Delaware,58.7,0
+2019,Florida,56.6,0
+2019,Georgia,58.0,0
+2019,Hawaii,63.9,0
+2019,Idaho,64.0,0
+2019,Illinois,56.1,0
+2019,Indiana,61.7,0
+2019,Iowa,63.4,0
+2019,Kansas,63.0,0
+2019,Kentucky,62.6,0
+2019,Louisiana,63.9,0
+2019,Maine,50.6,0
+2019,Maryland,59.2,0
+2019,Massachusetts,49.6,0
+2019,Michigan,57.4,0
+2019,Minnesota,61.0,0
+2019,Mississippi,62.7,0
+2019,Missouri,61.3,0
+2019,Montana,56.8,0
+2019,Nebraska,66.2,0
+2019,Nevada,58.3,0
+2019,New Hampshire,48.2,0
+2019,New Jersey,59.5,0
+2019,New Mexico,57.6,0
+2019,New York,57.2,0
+2019,North Carolina,57.8,0
+2019,North Dakota,70.6,0
+2019,Ohio,60.8,0
+2019,Oklahoma,63.4,0
+2019,Oregon,50.6,0
+2019,Pennsylvania,56.3,0
+2019,Rhode Island,48.8,0
+2019,South Carolina,58.0,0
+2019,South Dakota,70.6,0
+2019,Tennessee,60.3,0
+2019,Texas,62.5,0
+2019,Utah,66.7,0
+2019,Vermont,46.8,0
+2019,Virginia,57.8,0
+2019,Washington,56.0,0
+2019,West Virginia,57.6,0
+2019,Wisconsin,58.1,0
+2019,Wyoming,60.8,0
+2018,Alabama,60.9,0
+2018,Alaska,69.3,0
+2018,Arizona,58.6,0
+2018,Arkansas,64.0,0
+2018,California,56.2,0
+2018,Colorado,54.1,0
+2018,Connecticut,51.8,0
+2018,Delaware,59.1,0
+2018,Florida,57.2,0
+2018,Georgia,58.3,0
+2018,Hawaii,64.2,0
+2018,Idaho,63.4,0
+2018,Illinois,57.5,0
+2018,Indiana,62.8,0
+2018,Iowa,63.5,0
+2018,Kansas,64.7,0
+2018,Kentucky,63.5,0
+2018,Louisiana,64.3,0
+2018,Maine,53.3,0
+2018,Maryland,59.9,0
+2018,Massachusetts,49.5,0
+2018,Michigan,58.5,0
+2018,Minnesota,62.7,0
+2018,Mississippi,62.8,0
+2018,Missouri,62.4,0
+2018,Montana,59.6,0
+2018,Nebraska,68.4,0
+2018,Nevada,60.0,0
+2018,New Hampshire,49.1,0
+2018,New Jersey,60.1,0
+2018,New Mexico,58.0,0
+2018,New York,57.9,0
+2018,North Carolina,58.4,0
+2018,North Dakota,72.2,0
+2018,Ohio,61.1,0
+2018,Oklahoma,64.6,0
+2018,Oregon,51.4,0
+2018,Pennsylvania,56.9,0
+2018,Rhode Island,50.5,0
+2018,South Carolina,58.1,0
+2018,South Dakota,73.6,0
+2018,Tennessee,61.1,0
+2018,Texas,63.4,0
+2018,Utah,68.4,0
+2018,Vermont,47.2,0
+2018,Virginia,59.1,0
+2018,Washington,57.5,0
+2018,West Virginia,57.2,0
+2018,Wisconsin,58.9,0
+2018,Wyoming,61.0,0
+2017,Alabama,62.0,0
+2017,Alaska,71.5,0
+2017,Arizona,60.8,0
+2017,Arkansas,65.0,0
+2017,California,58.2,0
+2017,Colorado,56.6,0
+2017,Connecticut,52.3,0
+2017,Delaware,60.2,0
+2017,Florida,58.4,0
+2017,Georgia,60.2,0
+2017,Hawaii,65.9,0
+2017,Idaho,67.4,0
+2017,Illinois,59.0,0
+2017,Indiana,63.4,0
+2017,Iowa,64.9,0
+2017,Kansas,65.4,0
+2017,Kentucky,64.5,0
+2017,Louisiana,65.2,0
+2017,Maine,53.1,0
+2017,Maryland,60.0,0
+2017,Massachusetts,51.2,0
+2017,Michigan,59.4,0
+2017,Minnesota,64.3,0
+2017,Mississippi,63.1,0
+2017,Missouri,62.3,0
+2017,Montana,62.1,0
+2017,Nebraska,69.8,0
+2017,Nevada,60.7,0
+2017,New Hampshire,50.2,0
+2017,New Jersey,59.0,0
+2017,New Mexico,60.1,0
+2017,New York,57.4,0
+2017,North Carolina,59.6,0
+2017,North Dakota,73.4,0
+2017,Ohio,62.1,0
+2017,Oklahoma,65.3,0
+2017,Oregon,53.8,0
+2017,Pennsylvania,57.8,0
+2017,Rhode Island,50.9,0
+2017,South Carolina,59.1,0
+2017,South Dakota,76.4,0
+2017,Tennessee,61.7,0
+2017,Texas,64.9,0
+2017,Utah,72.0,0
+2017,Vermont,49.7,0
+2017,Virginia,59.7,0
+2017,Washington,59.8,0
+2017,West Virginia,58.0,0
+2017,Wisconsin,60.0,0
+2017,Wyoming,64.1,0
+2016,Alabama,62.1,0
+2016,Alaska,76.1,0
+2016,Arizona,63.5,0
+2016,Arkansas,66.4,0
+2016,California,60.6,0
+2016,Colorado,59.3,0
+2016,Connecticut,53.4,0
+2016,Delaware,61.2,0
+2016,Florida,59.7,0
+2016,Georgia,61.1,0
+2016,Hawaii,67.6,0
+2016,Idaho,69.8,0
+2016,Illinois,60.6,0
+2016,Indiana,64.3,0
+2016,Iowa,66.9,0
+2016,Kansas,68.1,0
+2016,Kentucky,65.4,0
+2016,Louisiana,67.2,0
+2016,Maine,54.9,0
+2016,Maryland,61.3,0
+2016,Massachusetts,51.9,0
+2016,Michigan,60.5,0
+2016,Minnesota,66.1,0
+2016,Mississippi,63.7,0
+2016,Missouri,63.8,0
+2016,Montana,65.3,0
+2016,Nebraska,72.2,0
+2016,Nevada,62.6,0
+2016,New Hampshire,50.9,0
+2016,New Jersey,60.1,0
+2016,New Mexico,62.7,0
+2016,New York,58.6,0
+2016,North Carolina,60.3,0
+2016,North Dakota,77.3,0
+2016,Ohio,62.8,0
+2016,Oklahoma,68.4,0
+2016,Oregon,57.0,0
+2016,Pennsylvania,58.5,0
+2016,Rhode Island,51.8,0
+2016,South Carolina,59.9,0
+2016,South Dakota,77.7,0
+2016,Tennessee,62.0,0
+2016,Texas,68.6,0
+2016,Utah,76.2,0
+2016,Vermont,50.3,0
+2016,Virginia,61.1,0
+2016,Washington,63.0,0
+2016,West Virginia,58.2,0
+2016,Wisconsin,61.6,0
+2016,Wyoming,67.2,0
+2015,Alabama,62.2,0
+2015,Alaska,77.0,0
+2015,Arizona,64.7,0
+2015,Arkansas,67.5,0
+2015,California,60.8,0
+2015,Colorado,60.2,0
+2015,Connecticut,52.5,0
+2015,Delaware,61.8,0
+2015,Florida,60.0,0
+2015,Georgia,62.0,0
+2015,Hawaii,68.7,0
+2015,Idaho,71.8,0
+2015,Illinois,61.3,0
+2015,Indiana,64.8,0
+2015,Iowa,67.1,0
+2015,Kansas,69.9,0
+2015,Kentucky,65.7,0
+2015,Louisiana,68.5,0
+2015,Maine,54.3,0
+2015,Maryland,61.3,0
+2015,Massachusetts,52.0,0
+2015,Michigan,60.3,0
+2015,Minnesota,66.3,0
+2015,Mississippi,64.0,0
+2015,Missouri,63.8,0
+2015,Montana,67.3,0
+2015,Nebraska,72.8,0
+2015,Nevada,63.3,0
+2015,New Hampshire,51.3,0
+2015,New Jersey,60.0,0
+2015,New Mexico,65.3,0
+2015,New York,58.8,0
+2015,North Carolina,60.7,0
+2015,North Dakota,76.4,0
+2015,Ohio,63.1,0
+2015,Oklahoma,69.1,0
+2015,Oregon,58.1,0
+2015,Pennsylvania,58.7,0
+2015,Rhode Island,52.5,0
+2015,South Carolina,61.1,0
+2015,South Dakota,78.2,0
+2015,Tennessee,62.8,0
+2015,Texas,70.2,0
+2015,Utah,78.0,0
+2015,Vermont,51.1,0
+2015,Virginia,61.3,0
+2015,Washington,62.8,0
+2015,West Virginia,59.4,0
+2015,Wisconsin,61.8,0
+2015,Wyoming,70.2,0
+2014,Alabama,61.8,0
+2014,Alaska,77.3,0
+2014,Arizona,66.4,0
+2014,Arkansas,67.0,0
+2014,California,62.4,0
+2014,Colorado,60.7,0
+2014,Connecticut,53.0,0
+2014,Delaware,60.8,0
+2014,Florida,59.7,0
+2014,Georgia,62.2,0
+2014,Hawaii,69.3,0
+2014,Idaho,72.7,0
+2014,Illinois,61.1,0
+2014,Indiana,64.9,0
+2014,Iowa,67.8,0
+2014,Kansas,70.0,0
+2014,Kentucky,65.8,0
+2014,Louisiana,68.4,0
+2014,Maine,54.3,0
+2014,Maryland,61.5,0
+2014,Massachusetts,52.5,0
+2014,Michigan,60.6,0
+2014,Minnesota,66.4,0
+2014,Mississippi,64.4,0
+2014,Missouri,64.1,0
+2014,Montana,67.0,0
+2014,Nebraska,73.6,0
+2014,Nevada,63.3,0
+2014,New Hampshire,50.5,0
+2014,New Jersey,59.9,0
+2014,New Mexico,65.5,0
+2014,New York,59.0,0
+2014,North Carolina,61.0,0
+2014,North Dakota,78.8,0
+2014,Ohio,63.1,0
+2014,Oklahoma,69.9,0
+2014,Oregon,58.7,0
+2014,Pennsylvania,59.1,0
+2014,Rhode Island,51.5,0
+2014,South Carolina,61.1,0
+2014,South Dakota,77.8,0
+2014,Tennessee,63.0,0
+2014,Texas,70.7,0
+2014,Utah,80.0,0
+2014,Vermont,52.9,0
+2014,Virginia,61.3,0
+2014,Washington,63.3,0
+2014,West Virginia,60.3,0
+2014,Wisconsin,61.8,0
+2014,Wyoming,69.4,0

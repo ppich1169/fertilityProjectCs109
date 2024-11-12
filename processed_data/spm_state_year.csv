@@ -1,0 +1,451 @@
+Year,State,poverty_measure
+2022,Alabama,16.3
+2022,Alaska,10.8
+2022,Arizona,12.3
+2022,Arkansas,16.6
+2022,California,11.7
+2022,Colorado,9.0
+2022,Connecticut,9.7
+2022,Delaware,8.7
+2022,Florida,12.5
+2022,Georgia,12.5
+2022,Hawaii,10.1
+2022,Idaho,10.1
+2022,Illinois,11.8
+2022,Indiana,12.3
+2022,Iowa,10.8
+2022,Kansas,12.0
+2022,Kentucky,16.7
+2022,Louisiana,18.3
+2022,Maine,10.0
+2022,Maryland,9.4
+2022,Massachusetts,10.1
+2022,Michigan,13.2
+2022,Minnesota,9.2
+2022,Mississippi,18.9
+2022,Missouri,12.6
+2022,Montana,11.9
+2022,Nebraska,10.2
+2022,Nevada,12.5
+2022,New Hampshire,6.6
+2022,New Jersey,9.5
+2022,New Mexico,17.5
+2022,New York,13.6
+2022,North Carolina,12.8
+2022,North Dakota,11.0
+2022,Ohio,13.2
+2022,Oklahoma,15.4
+2022,Oregon,11.4
+2022,Pennsylvania,11.7
+2022,Rhode Island,10.5
+2022,South Carolina,13.9
+2022,South Dakota,10.9
+2022,Tennessee,13.3
+2022,Texas,13.8
+2022,Utah,7.9
+2022,Vermont,9.4
+2022,Virginia,10.5
+2022,Washington,9.7
+2022,West Virginia,17.6
+2022,Wisconsin,10.5
+2022,Wyoming,11.4
+2021,Alabama,15.8
+2021,Alaska,10.7
+2021,Arizona,12.7
+2021,Arkansas,16.3
+2021,California,12.1
+2021,Colorado,9.7
+2021,Connecticut,9.8
+2021,Delaware,11.1
+2021,Florida,13.0
+2021,Georgia,14.0
+2021,Hawaii,10.6
+2021,Idaho,11.0
+2021,Illinois,11.8
+2021,Indiana,11.9
+2021,Iowa,10.9
+2021,Kansas,11.8
+2021,Kentucky,16.4
+2021,Louisiana,19.3
+2021,Maine,11.9
+2021,Maryland,10.0
+2021,Massachusetts,10.2
+2021,Michigan,13.1
+2021,Minnesota,8.6
+2021,Mississippi,19.3
+2021,Missouri,12.5
+2021,Montana,10.9
+2021,Nebraska,10.0
+2021,Nevada,14.0
+2021,New Hampshire,6.9
+2021,New Jersey,10.2
+2021,New Mexico,18.5
+2021,New York,13.6
+2021,North Carolina,13.5
+2021,North Dakota,9.5
+2021,Ohio,13.2
+2021,Oklahoma,15.4
+2021,Oregon,12.1
+2021,Pennsylvania,11.9
+2021,Rhode Island,11.3
+2021,South Carolina,14.7
+2021,South Dakota,11.8
+2021,Tennessee,13.6
+2021,Texas,14.2
+2021,Utah,8.0
+2021,Vermont,10.1
+2021,Virginia,10.2
+2021,Washington,9.9
+2021,West Virginia,16.7
+2021,Wisconsin,10.8
+2021,Wyoming,11.2
+2019,Alabama,15.3
+2019,Alaska,10.6
+2019,Arizona,13.2
+2019,Arkansas,16.4
+2019,California,11.5
+2019,Colorado,9.2
+2019,Connecticut,10.0
+2019,Delaware,10.7
+2019,Florida,12.5
+2019,Georgia,13.3
+2019,Hawaii,9.1
+2019,Idaho,10.9
+2019,Illinois,11.2
+2019,Indiana,12.0
+2019,Iowa,11.2
+2019,Kansas,11.3
+2019,Kentucky,15.9
+2019,Louisiana,18.5
+2019,Maine,10.3
+2019,Maryland,8.9
+2019,Massachusetts,9.2
+2019,Michigan,12.9
+2019,Minnesota,8.7
+2019,Mississippi,19.4
+2019,Missouri,12.4
+2019,Montana,12.7
+2019,Nebraska,10.1
+2019,Nevada,12.9
+2019,New Hampshire,7.3
+2019,New Jersey,8.9
+2019,New Mexico,17.5
+2019,New York,12.5
+2019,North Carolina,13.3
+2019,North Dakota,10.6
+2019,Ohio,12.8
+2019,Oklahoma,15.3
+2019,Oregon,11.2
+2019,Pennsylvania,11.9
+2019,Rhode Island,10.4
+2019,South Carolina,13.6
+2019,South Dakota,10.4
+2019,Tennessee,13.7
+2019,Texas,13.5
+2019,Utah,9.2
+2019,Vermont,9.9
+2019,Virginia,9.7
+2019,Washington,9.4
+2019,West Virginia,15.6
+2019,Wisconsin,9.5
+2019,Wyoming,9.8
+2018,Alabama,16.6
+2018,Alaska,10.7
+2018,Arizona,13.7
+2018,Arkansas,17.2
+2018,California,12.5
+2018,Colorado,9.6
+2018,Connecticut,10.1
+2018,Delaware,11.7
+2018,Florida,13.2
+2018,Georgia,14.3
+2018,Hawaii,8.9
+2018,Idaho,11.8
+2018,Illinois,11.8
+2018,Indiana,13.0
+2018,Iowa,11.0
+2018,Kansas,12.1
+2018,Kentucky,16.5
+2018,Louisiana,18.5
+2018,Maine,10.8
+2018,Maryland,8.6
+2018,Massachusetts,9.7
+2018,Michigan,13.8
+2018,Minnesota,9.4
+2018,Mississippi,19.8
+2018,Missouri,13.0
+2018,Montana,11.8
+2018,Nebraska,11.4
+2018,Nevada,12.9
+2018,New Hampshire,7.1
+2018,New Jersey,9.2
+2018,New Mexico,19.8
+2018,New York,13.4
+2018,North Carolina,13.9
+2018,North Dakota,9.9
+2018,Ohio,13.8
+2018,Oklahoma,15.2
+2018,Oregon,11.8
+2018,Pennsylvania,11.9
+2018,Rhode Island,12.3
+2018,South Carolina,14.9
+2018,South Dakota,12.9
+2018,Tennessee,15.3
+2018,Texas,14.7
+2018,Utah,8.6
+2018,Vermont,10.9
+2018,Virginia,10.5
+2018,Washington,10.2
+2018,West Virginia,17.5
+2018,Wisconsin,10.6
+2018,Wyoming,11.0
+2017,Alabama,16.6
+2017,Alaska,11.3
+2017,Arizona,14.6
+2017,Arkansas,16.0
+2017,California,13.0
+2017,Colorado,10.2
+2017,Connecticut,9.1
+2017,Delaware,
+2017,Florida,13.8
+2017,Georgia,15.0
+2017,Hawaii,10.0
+2017,Idaho,13.0
+2017,Illinois,12.5
+2017,Indiana,13.4
+2017,Iowa,9.9
+2017,Kansas,11.8
+2017,Kentucky,17.2
+2017,Louisiana,19.8
+2017,Maine,11.1
+2017,Maryland,9.2
+2017,Massachusetts,10.1
+2017,Michigan,14.0
+2017,Minnesota,9.5
+2017,Mississippi,19.6
+2017,Missouri,13.1
+2017,Montana,12.3
+2017,Nebraska,10.5
+2017,Nevada,13.0
+2017,New Hampshire,7.3
+2017,New Jersey,9.5
+2017,New Mexico,19.4
+2017,New York,13.7
+2017,North Carolina,14.7
+2017,North Dakota,9.5
+2017,Ohio,13.7
+2017,Oklahoma,15.2
+2017,Oregon,12.9
+2017,Pennsylvania,12.3
+2017,Rhode Island,11.6
+2017,South Carolina,15.3
+2017,South Dakota,11.6
+2017,Tennessee,14.9
+2017,Texas,14.5
+2017,Utah,9.5
+2017,Vermont,10.9
+2017,Virginia,10.3
+2017,Washington,11.0
+2017,West Virginia,19.0
+2017,Wisconsin,10.8
+2017,Wyoming,11.8
+2016,Alabama,17.1
+2016,Alaska,10.4
+2016,Arizona,16.3
+2016,Arkansas,17.2
+2016,California,14.1
+2016,Colorado,10.6
+2016,Connecticut,9.2
+2016,Delaware,11.5
+2016,Florida,14.6
+2016,Georgia,15.6
+2016,Hawaii,8.4
+2016,Idaho,14.2
+2016,Illinois,12.8
+2016,Indiana,13.9
+2016,Iowa,11.2
+2016,Kansas,12.0
+2016,Kentucky,18.4
+2016,Louisiana,20.1
+2016,Maine,12.6
+2016,Maryland,9.2
+2016,Massachusetts,10.2
+2016,Michigan,14.7
+2016,Minnesota,9.6
+2016,Mississippi,20.6
+2016,Missouri,13.8
+2016,Montana,12.5
+2016,Nebraska,11.5
+2016,Nevada,13.4
+2016,New Hampshire,6.7
+2016,New Jersey,10.1
+2016,New Mexico,19.9
+2016,New York,14.5
+2016,North Carolina,15.5
+2016,North Dakota,11.3
+2016,Ohio,14.2
+2016,Oklahoma,15.9
+2016,Oregon,13.1
+2016,Pennsylvania,12.6
+2016,Rhode Island,12.4
+2016,South Carolina,15.1
+2016,South Dakota,13.2
+2016,Tennessee,15.5
+2016,Texas,15.5
+2016,Utah,10.2
+2016,Vermont,11.0
+2016,Virginia,10.9
+2016,Washington,11.1
+2016,West Virginia,18.2
+2016,Wisconsin,11.6
+2016,Wyoming,11.4
+2015,Alabama,18.7
+2015,Alaska,9.9
+2015,Arizona,17.1
+2015,Arkansas,19.2
+2015,California,15.1
+2015,Colorado,11.4
+2015,Connecticut,10.0
+2015,Delaware,13.3
+2015,Florida,15.5
+2015,Georgia,16.9
+2015,Hawaii,10.4
+2015,Idaho,13.9
+2015,Illinois,13.5
+2015,Indiana,14.9
+2015,Iowa,12.7
+2015,Kansas,12.8
+2015,Kentucky,18.0
+2015,Louisiana,19.3
+2015,Maine,12.6
+2015,Maryland,9.9
+2015,Massachusetts,11.0
+2015,Michigan,15.7
+2015,Minnesota,9.7
+2015,Mississippi,21.7
+2015,Missouri,14.5
+2015,Montana,14.4
+2015,Nebraska,12.4
+2015,Nevada,14.8
+2015,New Hampshire,7.7
+2015,New Jersey,10.4
+2015,New Mexico,20.6
+2015,New York,14.9
+2015,North Carolina,16.5
+2015,North Dakota,11.4
+2015,Ohio,14.7
+2015,Oklahoma,16.1
+2015,Oregon,14.8
+2015,Pennsylvania,12.7
+2015,Rhode Island,13.4
+2015,South Carolina,16.4
+2015,South Dakota,12.1
+2015,Tennessee,16.6
+2015,Texas,15.6
+2015,Utah,11.2
+2015,Vermont,9.5
+2015,Virginia,11.3
+2015,Washington,12.4
+2015,West Virginia,17.7
+2015,Wisconsin,11.4
+2015,Wyoming,10.1
+2014,Alabama,19.3
+2014,Alaska,12.3
+2014,Arizona,17.8
+2014,Arkansas,18.7
+2014,California,16.2
+2014,Colorado,12.0
+2014,Connecticut,9.9
+2014,Delaware,12.8
+2014,Florida,16.4
+2014,Georgia,18.5
+2014,Hawaii,11.0
+2014,Idaho,14.7
+2014,Illinois,14.2
+2014,Indiana,15.3
+2014,Iowa,12.0
+2014,Kansas,13.6
+2014,Kentucky,18.4
+2014,Louisiana,19.4
+2014,Maine,14.3
+2014,Maryland,9.8
+2014,Massachusetts,11.4
+2014,Michigan,15.8
+2014,Minnesota,10.9
+2014,Mississippi,22.0
+2014,Missouri,15.2
+2014,Montana,15.6
+2014,Nebraska,12.5
+2014,Nevada,14.7
+2014,New Hampshire,9.2
+2014,New Jersey,10.9
+2014,New Mexico,21.1
+2014,New York,15.3
+2014,North Carolina,17.1
+2014,North Dakota,11.8
+2014,Ohio,15.7
+2014,Oklahoma,16.3
+2014,Oregon,15.8
+2014,Pennsylvania,13.4
+2014,Rhode Island,14.1
+2014,South Carolina,17.9
+2014,South Dakota,14.0
+2014,Tennessee,18.3
+2014,Texas,17.1
+2014,Utah,11.7
+2014,Vermont,10.1
+2014,Virginia,11.7
+2014,Washington,13.0
+2014,West Virginia,17.9
+2014,Wisconsin,12.7
+2014,Wyoming,11.9
+2020,Oregon,11.649999999999999
+2020,Georgia,13.65
+2020,Arkansas,16.35
+2020,North Carolina,13.4
+2020,Mississippi,19.35
+2020,Delaware,10.899999999999999
+2020,Florida,12.75
+2020,Wisconsin,10.15
+2020,Illinois,11.5
+2020,Alaska,10.649999999999999
+2020,New Mexico,18.0
+2020,West Virginia,16.15
+2020,Massachusetts,9.7
+2020,Kentucky,16.15
+2020,Idaho,10.95
+2020,South Carolina,14.149999999999999
+2020,Indiana,11.95
+2020,Minnesota,8.649999999999999
+2020,Iowa,11.05
+2020,New Jersey,9.55
+2020,Wyoming,10.5
+2020,Texas,13.85
+2020,Virginia,9.95
+2020,Tennessee,13.649999999999999
+2020,Nevada,13.45
+2020,North Dakota,10.05
+2020,Pennsylvania,11.9
+2020,Vermont,10.0
+2020,Louisiana,18.9
+2020,Utah,8.6
+2020,Maine,11.100000000000001
+2020,New Hampshire,7.1
+2020,Connecticut,9.9
+2020,Maryland,9.45
+2020,Michigan,13.0
+2020,Rhode Island,10.850000000000001
+2020,Missouri,12.45
+2020,New York,13.05
+2020,South Dakota,11.100000000000001
+2020,California,11.8
+2020,Montana,11.8
+2020,Hawaii,9.85
+2020,Nebraska,10.05
+2020,Washington,9.65
+2020,Colorado,9.45
+2020,Alabama,15.55
+2020,Arizona,12.95
+2020,Kansas,11.55
+2020,Oklahoma,15.350000000000001
+2020,Ohio,13.0

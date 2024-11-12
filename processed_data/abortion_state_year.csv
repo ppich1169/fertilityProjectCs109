@@ -1,0 +1,251 @@
+State,Year,latest_abortion,no_abortion_law
+Alabama,2018,20.0,0.0
+Alabama,2019,20.0,0.0
+Alabama,2020,20.0,0.0
+Alabama,2021,20.0,0.0
+Alabama,2022,20.0,0.0
+Alaska,2018,40.0,1.0
+Alaska,2019,40.0,1.0
+Alaska,2020,40.0,1.0
+Alaska,2021,40.0,1.0
+Alaska,2022,40.0,1.0
+Arizona,2018,18.0,0.0
+Arizona,2019,18.0,0.0
+Arizona,2020,18.0,0.0
+Arizona,2021,18.0,0.0
+Arizona,2022,18.0,0.0
+Arkansas,2018,20.0,0.0
+Arkansas,2019,16.0,0.0
+Arkansas,2020,16.0,0.0
+Arkansas,2021,16.0,0.0
+Arkansas,2022,16.0,0.0
+California,2018,40.0,1.0
+California,2019,40.0,1.0
+California,2020,40.0,1.0
+California,2021,40.0,1.0
+California,2022,40.0,1.0
+Colorado,2018,40.0,1.0
+Colorado,2019,40.0,1.0
+Colorado,2020,40.0,1.0
+Colorado,2021,40.0,1.0
+Colorado,2022,40.0,1.0
+Connecticut,2018,28.0,0.0
+Connecticut,2019,28.0,0.0
+Connecticut,2020,28.0,0.0
+Connecticut,2021,28.0,0.0
+Connecticut,2022,28.0,0.0
+Delaware,2018,40.0,1.0
+Delaware,2019,40.0,1.0
+Delaware,2020,40.0,1.0
+Delaware,2021,40.0,1.0
+Delaware,2022,40.0,1.0
+Florida,2018,28.0,0.0
+Florida,2019,28.0,0.0
+Florida,2020,28.0,0.0
+Florida,2021,28.0,0.0
+Florida,2022,13.0,0.0
+Georgia,2018,20.0,0.0
+Georgia,2019,20.0,0.0
+Georgia,2020,28.0,0.0
+Georgia,2021,28.0,0.0
+Georgia,2022,28.0,0.0
+Hawaii,2018,40.0,1.0
+Hawaii,2019,40.0,1.0
+Hawaii,2020,40.0,1.0
+Hawaii,2021,40.0,1.0
+Hawaii,2022,40.0,1.0
+Idaho,2018,20.0,0.0
+Idaho,2019,20.0,0.0
+Idaho,2020,20.0,0.0
+Idaho,2021,20.0,0.0
+Idaho,2022,20.0,0.0
+Illinois,2018,40.0,1.0
+Illinois,2019,40.0,1.0
+Illinois,2020,40.0,1.0
+Illinois,2021,40.0,1.0
+Illinois,2022,40.0,1.0
+Indiana,2018,20.0,0.0
+Indiana,2019,20.0,0.0
+Indiana,2020,20.0,0.0
+Indiana,2021,20.0,0.0
+Indiana,2022,20.0,0.0
+Iowa,2018,20.0,0.0
+Iowa,2019,20.0,0.0
+Iowa,2020,20.0,0.0
+Iowa,2021,20.0,0.0
+Iowa,2022,20.0,0.0
+Kansas,2018,20.0,0.0
+Kansas,2019,20.0,0.0
+Kansas,2020,20.0,0.0
+Kansas,2021,20.0,0.0
+Kansas,2022,20.0,0.0
+Kentucky,2018,20.0,0.0
+Kentucky,2019,20.0,0.0
+Kentucky,2020,20.0,0.0
+Kentucky,2021,20.0,0.0
+Kentucky,2022,13.0,0.0
+Louisiana,2018,20.0,0.0
+Louisiana,2019,20.0,0.0
+Louisiana,2020,20.0,0.0
+Louisiana,2021,20.0,0.0
+Louisiana,2022,20.0,0.0
+Maine,2018,40.0,1.0
+Maine,2019,40.0,1.0
+Maine,2020,40.0,1.0
+Maine,2021,40.0,1.0
+Maine,2022,40.0,1.0
+Maryland,2018,40.0,1.0
+Maryland,2019,40.0,1.0
+Maryland,2020,40.0,1.0
+Maryland,2021,40.0,1.0
+Maryland,2022,40.0,1.0
+Massachusetts,2018,40.0,1.0
+Massachusetts,2019,40.0,1.0
+Massachusetts,2020,40.0,1.0
+Massachusetts,2021,40.0,1.0
+Massachusetts,2022,40.0,1.0
+Michigan,2018,40.0,1.0
+Michigan,2019,40.0,1.0
+Michigan,2020,40.0,1.0
+Michigan,2021,40.0,1.0
+Michigan,2022,40.0,1.0
+Minnesota,2018,40.0,1.0
+Minnesota,2019,40.0,1.0
+Minnesota,2020,40.0,1.0
+Minnesota,2021,40.0,1.0
+Minnesota,2022,40.0,1.0
+Mississippi,2018,13.0,0.0
+Mississippi,2019,13.0,0.0
+Mississippi,2020,13.0,0.0
+Mississippi,2021,13.0,0.0
+Mississippi,2022,13.0,0.0
+Missouri,2018,40.0,1.0
+Missouri,2019,6.0,0.0
+Missouri,2020,6.0,0.0
+Missouri,2021,6.0,0.0
+Missouri,2022,6.0,0.0
+Montana,2018,40.0,1.0
+Montana,2019,40.0,1.0
+Montana,2020,40.0,1.0
+Montana,2021,25.0,0.0
+Montana,2022,25.0,0.0
+Nebraska,2018,20.0,0.0
+Nebraska,2019,20.0,0.0
+Nebraska,2020,20.0,0.0
+Nebraska,2021,20.0,0.0
+Nebraska,2022,20.0,0.0
+Nevada,2018,40.0,1.0
+Nevada,2019,40.0,1.0
+Nevada,2020,40.0,1.0
+Nevada,2021,40.0,1.0
+Nevada,2022,40.0,1.0
+New Hampshire,2018,40.0,1.0
+New Hampshire,2019,40.0,1.0
+New Hampshire,2020,40.0,1.0
+New Hampshire,2021,40.0,1.0
+New Hampshire,2022,22.0,0.0
+New Jersey,2018,40.0,1.0
+New Jersey,2019,40.0,1.0
+New Jersey,2020,40.0,1.0
+New Jersey,2021,40.0,1.0
+New Jersey,2022,40.0,1.0
+New Mexico,2018,40.0,1.0
+New Mexico,2019,40.0,1.0
+New Mexico,2020,40.0,1.0
+New Mexico,2021,40.0,1.0
+New Mexico,2022,40.0,1.0
+New York,2018,40.0,1.0
+New York,2019,40.0,1.0
+New York,2020,40.0,1.0
+New York,2021,40.0,1.0
+New York,2022,40.0,1.0
+North Carolina,2018,20.0,0.0
+North Carolina,2019,20.0,0.0
+North Carolina,2020,20.0,0.0
+North Carolina,2021,20.0,0.0
+North Carolina,2022,20.0,0.0
+North Dakota,2018,20.0,0.0
+North Dakota,2019,20.0,0.0
+North Dakota,2020,20.0,0.0
+North Dakota,2021,20.0,0.0
+North Dakota,2022,20.0,0.0
+Ohio,2018,20.0,0.0
+Ohio,2019,20.0,0.0
+Ohio,2020,20.0,0.0
+Ohio,2021,20.0,0.0
+Ohio,2022,20.0,0.0
+Oklahoma,2018,20.0,0.0
+Oklahoma,2019,20.0,0.0
+Oklahoma,2020,20.0,0.0
+Oklahoma,2021,20.0,0.0
+Oklahoma,2022,20.0,0.0
+Oregon,2018,40.0,1.0
+Oregon,2019,40.0,1.0
+Oregon,2020,40.0,1.0
+Oregon,2021,40.0,1.0
+Oregon,2022,40.0,1.0
+Pennsylvania,2018,40.0,1.0
+Pennsylvania,2019,40.0,1.0
+Pennsylvania,2020,40.0,1.0
+Pennsylvania,2021,40.0,1.0
+Pennsylvania,2022,40.0,1.0
+Rhode Island,2018,28.0,0.0
+Rhode Island,2019,28.0,0.0
+Rhode Island,2020,28.0,0.0
+Rhode Island,2021,28.0,0.0
+Rhode Island,2022,28.0,0.0
+South Carolina,2018,20.0,0.0
+South Carolina,2019,20.0,0.0
+South Carolina,2020,20.0,0.0
+South Carolina,2021,20.0,0.0
+South Carolina,2022,20.0,0.0
+South Dakota,2018,25.0,0.0
+South Dakota,2019,25.0,0.0
+South Dakota,2020,25.0,0.0
+South Dakota,2021,25.0,0.0
+South Dakota,2022,22.0,0.0
+Tennessee,2018,18.0,0.0
+Tennessee,2019,18.0,0.0
+Tennessee,2020,4.0,0.0
+Tennessee,2021,4.0,0.0
+Tennessee,2022,4.0,0.0
+Texas,2018,20.0,0.0
+Texas,2019,20.0,0.0
+Texas,2020,20.0,0.0
+Texas,2021,20.0,0.0
+Texas,2022,20.0,0.0
+Utah,2018,40.0,1.0
+Utah,2019,16.0,0.0
+Utah,2020,16.0,0.0
+Utah,2021,16.0,0.0
+Utah,2022,16.0,0.0
+Vermont,2018,40.0,1.0
+Vermont,2019,40.0,1.0
+Vermont,2020,40.0,1.0
+Vermont,2021,40.0,1.0
+Vermont,2022,40.0,1.0
+Virginia,2018,28.0,0.0
+Virginia,2019,28.0,0.0
+Virginia,2020,28.0,0.0
+Virginia,2021,28.0,0.0
+Virginia,2022,28.0,0.0
+Washington,2018,40.0,1.0
+Washington,2019,40.0,1.0
+Washington,2020,40.0,1.0
+Washington,2021,40.0,1.0
+Washington,2022,40.0,1.0
+West Virginia,2018,20.0,0.0
+West Virginia,2019,20.0,0.0
+West Virginia,2020,20.0,0.0
+West Virginia,2021,20.0,0.0
+West Virginia,2022,20.0,0.0
+Wisconsin,2018,20.0,0.0
+Wisconsin,2019,20.0,0.0
+Wisconsin,2020,20.0,0.0
+Wisconsin,2021,20.0,0.0
+Wisconsin,2022,20.0,0.0
+Wyoming,2018,40.0,1.0
+Wyoming,2019,40.0,1.0
+Wyoming,2020,40.0,1.0
+Wyoming,2021,40.0,1.0
+Wyoming,2022,40.0,1.0
