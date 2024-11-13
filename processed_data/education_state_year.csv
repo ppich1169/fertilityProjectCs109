@@ -1,4 +1,4 @@
-Year,State,    Bachelor's degree or higher,Less than high school,High school or some college
+Year,State,    Bachelor's degree or higher,percent_less_than_high_school,percent_high_school_or_some_college
 2014,Alabama,0.094,0.717,0.18900000000000003
 2014,Alaska,0.079,0.6220000000000001,0.29899999999999993
 2014,Arizona,0.08900000000000001,0.722,0.189
