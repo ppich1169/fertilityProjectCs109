@@ -49,106 +49,106 @@ Year,State,fertility_rate,covid_year
 2022,West Virginia,54.0,0
 2022,Wisconsin,54.2,0
 2022,Wyoming,55.4,0
-2021,Alabama,59.5,0
-2021,Alaska,64.9,0
-2021,Arizona,55.5,0
-2021,Arkansas,61.7,0
-2021,California,52.8,0
-2021,Colorado,52.5,0
-2021,Connecticut,52.1,0
-2021,Delaware,56.5,0
-2021,Florida,54.9,0
-2021,Georgia,55.9,0
-2021,Hawaii,59.2,0
-2021,Idaho,60.7,0
-2021,Illinois,53.0,0
-2021,Indiana,60.2,0
-2021,Iowa,60.8,0
-2021,Kansas,61.0,0
-2021,Kentucky,60.8,0
-2021,Louisiana,62.7,0
-2021,Maine,49.9,0
-2021,Maryland,56.4,0
-2021,Massachusetts,49.0,0
-2021,Michigan,55.4,0
-2021,Minnesota,58.6,0
-2021,Mississippi,60.7,0
-2021,Missouri,58.4,0
-2021,Montana,54.8,0
-2021,Nebraska,64.4,0
-2021,Nevada,54.8,0
-2021,New Hampshire,49.9,0
-2021,New Jersey,58.0,0
-2021,New Mexico,52.9,0
-2021,New York,54.1,0
-2021,North Carolina,58.1,0
-2021,North Dakota,66.7,0
-2021,Ohio,57.9,0
-2021,Oklahoma,61.5,0
-2021,Oregon,48.9,0
-2021,Pennsylvania,54.7,0
-2021,Rhode Island,48.3,0
-2021,South Carolina,57.5,0
-2021,South Dakota,68.6,0
-2021,Tennessee,59.8,0
-2021,Texas,60.7,0
-2021,Utah,63.6,0
-2021,Vermont,44.9,0
-2021,Virginia,56.1,0
-2021,Washington,54.2,0
-2021,West Virginia,54.7,0
-2021,Wisconsin,55.7,0
-2021,Wyoming,57.5,0
-2020,Alabama,60.6,1
-2020,Alaska,65.7,1
-2020,Arizona,54.0,1
-2020,Arkansas,60.7,1
-2020,California,52.4,1
-2020,Colorado,51.5,1
-2020,Connecticut,49.9,1
-2020,Delaware,57.0,1
-2020,Florida,53.4,1
-2020,Georgia,55.7,1
-2020,Hawaii,61.1,1
-2020,Idaho,60.9,1
-2020,Illinois,53.8,1
-2020,Indiana,59.8,1
-2020,Iowa,60.4,1
-2020,Kansas,61.1,1
-2020,Kentucky,60.8,1
-2020,Louisiana,62.2,1
-2020,Maine,49.2,1
-2020,Maryland,57.7,1
-2020,Massachusetts,47.6,1
-2020,Michigan,55.6,1
-2020,Minnesota,58.3,1
-2020,Mississippi,61.0,1
-2020,Missouri,58.7,1
-2020,Montana,54.3,1
-2020,Nebraska,64.7,1
-2020,Nevada,54.8,1
-2020,New Hampshire,47.7,1
-2020,New Jersey,58.6,1
-2020,New Mexico,54.6,1
-2020,New York,54.6,1
-2020,North Carolina,56.2,1
-2020,North Dakota,67.4,1
-2020,Ohio,58.3,1
-2020,Oklahoma,61.0,1
-2020,Oregon,47.8,1
-2020,Pennsylvania,54.9,1
-2020,Rhode Island,48.7,1
-2020,South Carolina,55.9,1
-2020,South Dakota,66.7,1
-2020,Tennessee,58.5,1
-2020,Texas,60.2,1
-2020,Utah,64.1,1
-2020,Vermont,44.7,1
-2020,Virginia,55.8,1
-2020,Washington,54.0,1
-2020,West Virginia,55.3,1
-2020,Wisconsin,55.4,1
-2020,Wyoming,56.4,1
+2021,Alabama,59.5,1
+2021,Alaska,64.9,1
+2021,Arizona,55.5,1
+2021,Arkansas,61.7,1
+2021,California,52.8,1
+2021,Colorado,52.5,1
+2021,Connecticut,52.1,1
+2021,Delaware,56.5,1
+2021,Florida,54.9,1
+2021,Georgia,55.9,1
+2021,Hawaii,59.2,1
+2021,Idaho,60.7,1
+2021,Illinois,53.0,1
+2021,Indiana,60.2,1
+2021,Iowa,60.8,1
+2021,Kansas,61.0,1
+2021,Kentucky,60.8,1
+2021,Louisiana,62.7,1
+2021,Maine,49.9,1
+2021,Maryland,56.4,1
+2021,Massachusetts,49.0,1
+2021,Michigan,55.4,1
+2021,Minnesota,58.6,1
+2021,Mississippi,60.7,1
+2021,Missouri,58.4,1
+2021,Montana,54.8,1
+2021,Nebraska,64.4,1
+2021,Nevada,54.8,1
+2021,New Hampshire,49.9,1
+2021,New Jersey,58.0,1
+2021,New Mexico,52.9,1
+2021,New York,54.1,1
+2021,North Carolina,58.1,1
+2021,North Dakota,66.7,1
+2021,Ohio,57.9,1
+2021,Oklahoma,61.5,1
+2021,Oregon,48.9,1
+2021,Pennsylvania,54.7,1
+2021,Rhode Island,48.3,1
+2021,South Carolina,57.5,1
+2021,South Dakota,68.6,1
+2021,Tennessee,59.8,1
+2021,Texas,60.7,1
+2021,Utah,63.6,1
+2021,Vermont,44.9,1
+2021,Virginia,56.1,1
+2021,Washington,54.2,1
+2021,West Virginia,54.7,1
+2021,Wisconsin,55.7,1
+2021,Wyoming,57.5,1
+2020,Alabama,60.6,0
+2020,Alaska,65.7,0
+2020,Arizona,54.0,0
+2020,Arkansas,60.7,0
+2020,California,52.4,0
+2020,Colorado,51.5,0
+2020,Connecticut,49.9,0
+2020,Delaware,57.0,0
+2020,Florida,53.4,0
+2020,Georgia,55.7,0
+2020,Hawaii,61.1,0
+2020,Idaho,60.9,0
+2020,Illinois,53.8,0
+2020,Indiana,59.8,0
+2020,Iowa,60.4,0
+2020,Kansas,61.1,0
+2020,Kentucky,60.8,0
+2020,Louisiana,62.2,0
+2020,Maine,49.2,0
+2020,Maryland,57.7,0
+2020,Massachusetts,47.6,0
+2020,Michigan,55.6,0
+2020,Minnesota,58.3,0
+2020,Mississippi,61.0,0
+2020,Missouri,58.7,0
+2020,Montana,54.3,0
+2020,Nebraska,64.7,0
+2020,Nevada,54.8,0
+2020,New Hampshire,47.7,0
+2020,New Jersey,58.6,0
+2020,New Mexico,54.6,0
+2020,New York,54.6,0
+2020,North Carolina,56.2,0
+2020,North Dakota,67.4,0
+2020,Ohio,58.3,0
+2020,Oklahoma,61.0,0
+2020,Oregon,47.8,0
+2020,Pennsylvania,54.9,0
+2020,Rhode Island,48.7,0
+2020,South Carolina,55.9,0
+2020,South Dakota,66.7,0
+2020,Tennessee,58.5,0
+2020,Texas,60.2,0
+2020,Utah,64.1,0
+2020,Vermont,44.7,0
+2020,Virginia,55.8,0
+2020,Washington,54.0,0
+2020,West Virginia,55.3,0
+2020,Wisconsin,55.4,0
+2020,Wyoming,56.4,0
 2019,Alabama,61.7,0
 2019,Alaska,68.1,0
 2019,Arizona,56.7,0
