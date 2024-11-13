@@ -1,4 +1,4 @@
-Year,State,fertility_rate,covid_year,religousness_rate,percent_white,percent_black,percent_hispanic,percent_asian,percent_mixed_race,poverty_measure,foreign_born,    Bachelor's degree or higher,percent_less_than_high_school,percent_high_school_or_some_college,political_ranking
+Year,State,fertility_rate,covid_year,religousness_rate,percent_white,percent_black,percent_hispanic,percent_asian,percent_mixed_race,poverty_measure,foreign_born,percent_bachelors_or_higher,percent_less_than_high_school,percent_high_school_or_some_college,political_ranking
 2014,Alabama,61.8,0,631.9419999999999,0.664,0.263,0.039,0.012,0.018,19.3,3.6,0.094,0.717,0.189,0.2368421052631578
 2015,Alabama,62.2,0,632.62,0.662,0.265,0.04,0.012,0.018,18.7,3.625,0.094,0.717,0.189,0.2368421052631578
 2016,Alabama,62.1,0,633.2979999999999,0.66,0.265,0.041,0.012,0.017,17.1,3.65,0.0819999999999999,0.7050000000000001,0.213,0.2368421052631578

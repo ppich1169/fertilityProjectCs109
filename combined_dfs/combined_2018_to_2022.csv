@@ -1,4 +1,4 @@
-Year,State,fertility_rate,covid_year,religousness_rate,percent_white,percent_black,percent_hispanic,percent_asian,percent_mixed_race,poverty_measure,foreign_born,    Bachelor's degree or higher,percent_less_than_high_school,percent_high_school_or_some_college,political_ranking,latest_abortion,no_abortion_law
+Year,State,fertility_rate,covid_year,religousness_rate,percent_white,percent_black,percent_hispanic,percent_asian,percent_mixed_race,poverty_measure,foreign_born,percent_bachelors_or_higher,percent_less_than_high_school,percent_high_school_or_some_college,political_ranking,latest_abortion,no_abortion_law
 2022,Alabama,58.7,0,637.3659999999999,0.645,0.252,0.048,0.014,0.039,16.3,3.8,0.0819999999999999,0.7050000000000001,0.213,0.2368421052631578,20.0,0.0
 2022,Alaska,64.9,0,354.366,0.577,0.028,0.073,0.061,0.116,10.8,7.5,0.104,0.6439999999999999,0.252,0.4210526315789473,40.0,1.0
 2022,Arizona,54.9,0,454.326000000001,0.518,0.043,0.325,0.035,0.044,12.3,13.1,0.09,0.6990000000000001,0.211,0.5789473684210527,18.0,0.0
