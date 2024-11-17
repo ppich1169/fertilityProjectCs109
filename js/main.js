@@ -1,122 +1,58 @@
-// SVG drawing area
+// init global variables & switches
+let myMapVis;
+let selectedCategory = document.getElementById('categorySelector').value;
+let selectedYear = document.getElementById('yearSlider').value;
 
-let margin = {top: 40, right: 10, bottom: 60, left: 60};
+function categoryChange() {
+    selectedCategory = document.getElementById('categorySelector').value;
+    myMapVis.selectedCategory = selectedCategory;
+    myMapVis.wrangleData(); // Update the map visualization
+}
 
-let width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+function yearChange() {
+    selectedYear = document.getElementById('yearSlider').value;
+    document.getElementById('yearValue').textContent = selectedYear;
+    myMapVis.selectedYear = selectedYear;
+    myMapVis.wrangleData(); // Update the map visualization
+}
 
-let svg = d3.select("#chart-area").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+// load data using promises
+let promises = [
+    d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/states-albers-10m.json"), // already projected -> you can just scale it to fit your browser window
+    d3.csv("combined_dfs/combined_2018_to_2022.csv")
+];
 
+Promise.all(promises)
+    .then(function (data) {
+        initMainPage(data)
+    })
+    .catch(function (err) {
+        console.log(err)
+    });
 
-// Scales
-let x = d3.scaleBand()
-    .rangeRound([0, width])
-    .paddingInner(0.1);
+// initMainPage
+function initMainPage(dataArray) {
 
-let y = d3.scaleLinear()
-    .range([height, 0]);
+    // log data
+    console.log('check out the data', dataArray);
 
-// Initialize data
-loadData();
+    // init map
+    console.log('this is what data[0] looks like', dataArray[0])
+    console.log('this is what data[1] looks like', dataArray[1][0])
+    myMapVis = new MapVis('chart-area1', dataArray[1], dataArray[0]);
+}
 
-// Create a 'data' property under the window object
-// to store the coffee chain data
-Object.defineProperty(window, 'data', {
-    // data getter
-    get: function() { return _data; },
-    // data setter
-    set: function(value) {
-        _data = value;
-        // update the visualization each time the data property is set by using the equal sign (e.g. data = [])
-        updateVisualization()
-    }
+// Event listeners for category changes
+d3.select("#categorySelector").on("change", function() {
+    selectedCategory = d3.select(this).property("value");
+    myMapVis.selectedCategory = selectedCategory;
+    myMapVis.wrangleData();
 });
 
-// Load CSV file
-function loadData() {
-    d3.csv("data/coffee-house-chains.csv").then(csv => {
-
-        csv.forEach(function(d){
-            d.revenue = +d.revenue;
-            d.stores = +d.stores;
-        });
-
-        // Store csv data in global variable
-        data = csv;
-
-        // updateVisualization gets automatically called within the data = csv call;
-        // basically(whenever the data is set to a value using = operator);
-        // see the definition above: Object.defineProperty(window, 'data', { ...
-    });
-}
-
-// Listen to select box change event
-d3.select("#ranking-type").on("change", updateVisualization);
-
-// Render visualization
-function updateVisualization() {
-    // Get the selected option
-    let selectedOption = d3.select("#ranking-type").property("value");
-
-    // Sort data based on the selected option
-    data.sort((a, b) => b[selectedOption] - a[selectedOption]);
-
-    // Update the scales
-    x.domain(data.map(d => d.company));
-    y.domain([0, d3.max(data, d => d[selectedOption])]);
-
-    // Select all bars and bind data
-    let bars = svg.selectAll(".bar")
-        .data(data, d => d.company);
-
-    // Enter new bars
-    bars.enter()
-        .append("rect")
-        .attr("class", "bar")
-        .attr("x", d => x(d.company))
-        .attr("y", height) // Start from the bottom of the chart
-        .attr("width", x.bandwidth())
-        .attr("height", 0) // Start with height 0
-        .attr("fill", "steelblue")
-        .transition()
-        .duration(1000)
-        .attr("y", d => y(d[selectedOption]))
-        .attr("height", d => height - y(d[selectedOption]));
-
-    // Update existing bars
-    bars.transition()
-        .duration(1000)
-        .attr("x", d => x(d.company))
-        .attr("y", d => y(d[selectedOption]))
-        .attr("width", x.bandwidth())
-        .attr("height", d => height - y(d[selectedOption]));
-
-    // Remove old bars
-    bars.exit()
-        .transition()
-        .duration(1000)
-        .attr("y", height)
-        .attr("height", 0)
-        .remove();
-
-    // Append x-axis
-    svg.selectAll(".x-axis").remove();
-    svg.append("g")
-        .attr("class", "x-axis")
-        .attr("transform", `translate(0,${height})`)
-        .call(d3.axisBottom(x))
-        .transition()
-        .duration(1000);
-
-    // Append y-axis
-    svg.selectAll(".y-axis").remove();
-    svg.append("g")
-        .attr("class", "y-axis")
-        .call(d3.axisLeft(y))
-        .transition()
-        .duration(1000);
-}
+// Event listeners for year changes
+d3.select("#yearSlider").on("input", function() {
+    selectedYear = d3.select(this).property("value");
+    d3.select("#yearValue").text(selectedYear);
+    myMapVis.selectedYear = selectedYear;
+    myMapVis.wrangleData();
+});

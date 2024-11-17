@@ -16,6 +16,9 @@ h2 {
   margin-bottom: 30px;
   color: #906666;
 }
+#chart-area1 {
+  background-color: black; /* Change this to your desired color */
+}
 
 /*************/
 /*    FORM   */
