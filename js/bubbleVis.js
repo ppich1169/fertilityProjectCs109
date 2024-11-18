@@ -10,6 +10,14 @@ class BubbleVis {
         this.data = data;
         console.log(this);
 
+        // Define regions
+        this.regions = {
+            "Northeast": ["Connecticut", "Maine", "Massachusetts", "New Hampshire", "Rhode Island", "Vermont", "New Jersey", "New York", "Pennsylvania"],
+            "Midwest": ["Illinois", "Indiana", "Michigan", "Ohio", "Wisconsin", "Iowa", "Kansas", "Minnesota", "Missouri", "Nebraska", "North Dakota", "South Dakota"],
+            "South": ["Delaware", "Florida", "Georgia", "Maryland", "North Carolina", "South Carolina", "Virginia", "District of Columbia", "West Virginia", "Alabama", "Kentucky", "Mississippi", "Tennessee", "Arkansas", "Louisiana", "Oklahoma", "Texas"],
+            "West": ["Arizona", "Colorado", "Idaho", "Montana", "Nevada", "New Mexico", "Utah", "Wyoming", "Alaska", "California", "Hawaii", "Oregon", "Washington"]
+        };
+
         // Initialize the visualization
         this.initVis();
     }
@@ -19,25 +27,27 @@ class BubbleVis {
         let vis = this;
 
         // Specify the dimensions of the chart.
-        vis.width = 928;
-        vis.height = vis.width;
-        vis.margin = 1; // to avoid clipping the root circle stroke
+        vis.width = document.getElementById(vis.parentElement).clientWidth;
+        vis.height = document.getElementById(vis.parentElement).clientHeight;
+        vis.margin = 100; // to avoid clipping the root circle stroke
 
         // Specify the number format for values.
         vis.format = d3.format(",d");
 
-        // Create a categorical color scale.
-        vis.color = d3.scaleOrdinal(d3.schemeTableau10);
+        // Create a categorical color scale for regions.
+        vis.color = d3.scaleOrdinal()
+            .domain(Object.keys(vis.regions))
+            .range(d3.schemeTableau10);
 
         // Create the pack layout with increased padding for spacing out the bubbles.
         vis.pack = d3.pack()
             .size([vis.width - vis.margin * 2, vis.height - vis.margin * 2])
-            .padding(30); // Increase padding to space out the bubbles
+            .padding(10); // Increase padding to space out the bubbles
 
         // Create a scale for the circle radii
         vis.radiusScale = d3.scaleSqrt()
             .domain([d3.min(vis.data, d => +d.fertility_rate), d3.max(vis.data, d => +d.fertility_rate)])
-            .range([0, vis.width / 8]);
+            .range([10, vis.width / 8]);
 
         // Select the parent container
         vis.svg = d3.select(`#${vis.parentElement}`);
@@ -59,8 +69,8 @@ class BubbleVis {
         // Filter the data to include only the 2022 fertility_rate for each state
         vis.filteredData = vis.data.filter(d => +d.Year === 2022).map(d => ({
             id: d.State,
-            name: d.StateName, // Assuming StateName is the full name of the state
-            value: +d.fertility_rate
+            value: +d.fertility_rate,
+            region: vis.getRegion(d.State)
         }));
 
         // Compute the hierarchy from the (flat) data; expose the values
@@ -70,6 +80,16 @@ class BubbleVis {
 
         // Update the visualization
         vis.updateVis();
+    }
+
+    // Get the region for a given state
+    getRegion(state) {
+        for (const [region, states] of Object.entries(this.regions)) {
+            if (states.includes(state)) {
+                return region;
+            }
+        }
+        return "Unknown";
     }
 
     // Update the visualization
@@ -90,8 +110,8 @@ class BubbleVis {
         // Add a filled circle.
         vis.node.append("circle")
             .attr("fill-opacity", 0.7)
-            .attr("fill", d => vis.color(d.data.id))
-            .attr("r", d => vis.radiusScale(d.value));
+            .attr("fill", d => vis.color(d.data.region))
+            .attr("r", d => d.r); // Use the radius provided by the pack layout
 
         // Add the state abbreviation inside the bubble.
         vis.node.append("text")
@@ -103,21 +123,33 @@ class BubbleVis {
         vis.node.on("mouseover", function(event, d) {
                 // Make other bubbles more transparent
                 vis.node.selectAll("circle").attr("fill-opacity", 0.3);
+                vis.node.selectAll("text").style("display", "none");
 
-                console.log(d)
                 // Show value and state name of the hovered bubble
-                d3.select(this).select("circle").attr("fill-opacity", 1);
+                d3.select(this).select("circle").attr("fill-opacity", 1)
+                    // .transition().duration(200)
+                    .attr("r", d.r * 1.2); // Increase the size of the bubble
+
                 d3.select(this).select("text")
+                    // .transition().duration(200)
                     .style("display", "block")
                     .text(`${d.data.id}: ${vis.format(d.value)}`);
             })
             .on("mouseout", function(event, d) {
                 // Reset opacity of all bubbles
-                vis.node.selectAll("circle").attr("fill-opacity", 0.7);
+                vis.node.selectAll("circle")
+                    // .transition().duration(200)
+                    .attr("fill-opacity", 0.7);
+                vis.node.selectAll("text").style("display", "block");
 
                 // Reset text to state abbreviation
                 d3.select(this).select("text")
                     .text(d => d.data.id);
+
+                // Reset the size of the bubble
+                d3.select(this).select("circle")
+                    // .transition().duration(200)
+                    .attr("r", d.r);
             });
     }
 }

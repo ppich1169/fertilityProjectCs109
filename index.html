@@ -9,60 +9,86 @@
     <!-- CSS LIBRARIES -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
     <!-- YOUR CSS -->
     <link rel="stylesheet" href="css/style.css">
 
-    <style>
-        #chart-area1 {
-            background-color: #f0f0f0; /* Change this to your desired color */
-        }
-    </style>
 </head>
 <body>
 
-<div class="container">
-    <h1 class="mt-4">CS171 - Data Visualization Prototype</h1>
+<!-- Parallax Section for Title -->
+<div class="parallax" id="title-section">
+    <h1>CS171 - Fertility Project</h1>
+</div>
 
-    <div id="bubble2">
-        <svg width="1000" height="1000" id="chart-area2"></svg>
+
+
+<!-- Parallax Section for Bubble Chart -->
+<div class="parallax" id="bubble-section" data-aos="fade-up">
+    <h1>2022 Fertility Rate in the US</h1>
+    <svg width="50%" height="100%" id="chart-area2"></svg>
+</div>
+
+
+<!-- Two Column Layout -->
+<div class="container" data-aos="fade-right">
+    <div class="flex-container">
+        <div class="column">
+            <div class="mb-3">
+                <label for="categorySelector" class="form-label">Select Category:</label>
+                <select class="form-select" id="categorySelector" onchange="categoryChange()">
+                    <option value="fertility_rate">Fertility Rate</option>
+                    <option value="covid_year">COVID Year</option>
+                    <option value="religousness_rate">Religousness Rate</option>
+                    <option value="percent_white">Percent White</option>
+                    <option value="percent_black">Percent Black</option>
+                    <option value="percent_hispanic">Percent Hispanic</option>
+                    <option value="percent_asian">Percent Asian</option>
+                    <option value="percent_mixed_race">Percent Mixed Race</option>
+                    <option value="poverty_measure">Poverty Measure</option>
+                    <option value="foreign_born">Foreign Born</option>
+                    <option value="percent_bachelors_or_higher">Percent Bachelors or Higher</option>
+                    <option value="percent_less_than_high_school">Percent Less Than High School</option>
+                    <option value="percent_high_school_or_some_college">Percent High School or Some College</option>
+                    <option value="political_ranking">Political Ranking</option>
+                    <option value="latest_abortion">Latest Abortion</option>
+                    <option value="no_abortion_law">No Abortion Law</option>
+                </select>
+                <div class="mb-3" data-aos="fade-left">
+                    <label for="yearSlider" class="form-label">Select Year:</label>
+                    <input type="range" class="form-range" id="yearSlider" min="2018" max="2022" step="1" value="2020" oninput="yearChange()">
+                    <span id="yearValue">2020</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="parallax" id="map-section" data-aos="fade-up">
+                <svg width="1000" height="500" id="chart-area1"></svg>
+            </div>
+        </div>
+        <div class="column">Filler textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller text</div>
     </div>
 
-    <!-- Category Selector -->
-    <div class="mb-3">
-        <label for="categorySelector" class="form-label">Select Category:</label>
-        <select class="form-select" id="categorySelector" onchange="categoryChange()">
-            <option value="fertility_rate">Fertility Rate</option>
-            <option value="covid_year">COVID Year</option>
-            <option value="religousness_rate">Religousness Rate</option>
-            <option value="percent_white">Percent White</option>
-            <option value="percent_black">Percent Black</option>
-            <option value="percent_hispanic">Percent Hispanic</option>
-            <option value="percent_asian">Percent Asian</option>
-            <option value="percent_mixed_race">Percent Mixed Race</option>
-            <option value="poverty_measure">Poverty Measure</option>
-            <option value="foreign_born">Foreign Born</option>
-            <option value="percent_bachelors_or_higher">Percent Bachelors or Higher</option>
-            <option value="percent_less_than_high_school">Percent Less Than High School</option>
-            <option value="percent_high_school_or_some_college">Percent High School or Some College</option>
-            <option value="political_ranking">Political Ranking</option>
-            <option value="latest_abortion">Latest Abortion</option>
-            <option value="no_abortion_law">No Abortion Law</option>
-        </select>
-    </div>
+<!-- Parallax Section for Map -->
 
-    <!-- Year Slider -->
-    <div class="mb-3">
-        <label for="yearSlider" class="form-label">Select Year:</label>
-        <input type="range" class="form-range" id="yearSlider" min="2018" max="2022" step="1" value="2020" oninput="yearChange()">
-        <span id="yearValue">2020</span>
-    </div>
-    
-    <div id="map1">
-        <svg width="1000" height="500" id="chart-area1"></svg>
-    </div>
 
-    <div id="chart-area3"></div>
+<div class="parallax" id="other-chart" data-aos="fade-up">
+    <h1>Other Chart</h1>
+    <svg width="50%" height="100%" id="chart-area3"></svg>
+</div>
 
+
+<div class="parallax" id="other-chart" data-aos="fade-up">
+    <h1>Other Chart</h1>
+    <svg width="50%" height="100%" id="chart-area3"></svg>
+</div>
+
+<div class="parallax" id="other-chart" data-aos="fade-up">
+    <h1>Concluding text/images</h1>
+    <svg width="50%" height="100%" id="chart-area3"></svg>
 </div>
 
 <!-- embedding JS libraries -->
@@ -76,10 +102,16 @@
 <!-- topojson -->
 <script src="https://d3js.org/topojson.v1.min.js"></script>
 
-<!-- Your implementation -->
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
 <script src="js/main.js"></script>
 <script src="js/mapVis.js"></script>
 <script src="js/bubbleVis.js"></script>
+
+<script>
+    AOS.init();
+</script>
 
 </body>
 </html>

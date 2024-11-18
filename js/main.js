@@ -1,5 +1,6 @@
 // init global variables & switches
 let myMapVis;
+let myBubbleVis;
 let selectedCategory = document.getElementById('categorySelector').value;
 let selectedYear = document.getElementById('yearSlider').value;
 
@@ -40,6 +41,9 @@ function initMainPage(dataArray) {
     console.log('this is what data[0] looks like', dataArray[0])
     console.log('this is what data[1] looks like', dataArray[1][0])
     myMapVis = new MapVis('chart-area1', dataArray[1], dataArray[0]);
+
+    // init bubble chart
+    console.log('this is what bubble chart data looks like', dataArray[1])
     myBubbleVis = new BubbleVis('chart-area2', dataArray[1]);
 }
 

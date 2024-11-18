@@ -1,11 +1,85 @@
 
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FCEADE;
+}
+
+.parallax {
+  /* The image used */
+  /* background-image: url('image/BackGround.png'); */
+  background-color: #FCEADE;
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#title-section {
+  background-color: #FF8A5B;
+  text-align: center;
+  padding: 50px;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#title-section h1 {
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+#section2{
+  background-color: #FCEADE;
+  text-align: center;
+  padding: 50px;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#bubble-section {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: #FCEADE; /* Updated background color */
+}
+#bubble-section h1 {
+  color: #906666;
+}
+
+#map-section {
+  padding: 50px 0;
+  text-align: center;
+  background-color: #FCEADE;
+}
+
+#chart-area1 {
+  background-color: #FCEADE; /* Change this to your desired color */
+}
+
 body {
   font-family: 'Lato', sans-serif;
   background-color: #D0C6B2;
 }
 
 h1 {
-  color: #865F3C;
+  color: black;
   margin-top: 40px;
   font-weight: 300;
 }
@@ -16,10 +90,6 @@ h2 {
   margin-bottom: 30px;
   color: #906666;
 }
-#chart-area1 {
-  background-color: black; /* Change this to your desired color */
-}
-
 /*************/
 /*    FORM   */
 /*************/
@@ -57,36 +127,17 @@ h2 {
   margin-right: 5px;
 }
 
-
-/***************/
-/*  BAR CHART  */
-/***************/
-
-.bar {
-  fill: #8E7060;
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.axis {
-  font: 10px sans-serif;
-  fill: #333;
+.column {
+  flex: 1;
+  margin-right: 20px;
 }
 
-.axis-title {
-  fill: #9C8B83;
-  font-size: 11px;
-}
-
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #333;
-  shape-rendering: crispEdges;
-}
-
-.x-axis {
-  font-size: 12px;
-}
-
-.x-axis path {
-  display: none;
+.column:last-child {
+  margin-right: 0;
 }
