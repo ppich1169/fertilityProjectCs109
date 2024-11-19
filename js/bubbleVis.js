@@ -69,6 +69,7 @@ class BubbleVis {
         // Filter the data to include only the 2022 fertility_rate for each state
         vis.filteredData = vis.data.filter(d => +d.Year === 2022).map(d => ({
             id: d.State,
+            name: d.StateName, // Assuming StateName is the full name of the state
             value: +d.fertility_rate,
             region: vis.getRegion(d.State)
         }));
@@ -105,17 +106,18 @@ class BubbleVis {
 
         // Add a title.
         vis.node.append("title")
-            .text(d => `${d.data.id}\n${vis.format(d.value)}`);
+            .text(d => `${d.data.name}\n${vis.format(d.value)}`);
 
         // Add a filled circle.
         vis.node.append("circle")
             .attr("fill-opacity", 0.7)
             .attr("fill", d => vis.color(d.data.region))
-            .attr("r", d => d.r); // Use the radius provided by the pack layout
+            .attr("r", d => vis.radiusScale(d.data.value)); // Use the radius scale based on fertility rate
 
-        // Add the state abbreviation inside the bubble.
+        // Add the full state name inside the bubble.
         vis.node.append("text")
             .attr("dy", "0.3em")
+            .style("font-size", "15px")
             .attr("text-anchor", "middle")
             .text(d => d.data.id);
 
@@ -127,29 +129,28 @@ class BubbleVis {
 
                 // Show value and state name of the hovered bubble
                 d3.select(this).select("circle").attr("fill-opacity", 1)
-                    // .transition().duration(200)
-                    .attr("r", d.r * 1.2); // Increase the size of the bubble
+                    .transition().duration(200)
+                    .attr("r", vis.radiusScale(d.data.value) * 1.2); // Increase the size of the bubble
 
                 d3.select(this).select("text")
-                    // .transition().duration(200)
                     .style("display", "block")
+                    .style("font-size", "30px")
                     .text(`${d.data.id}: ${vis.format(d.value)}`);
             })
             .on("mouseout", function(event, d) {
                 // Reset opacity of all bubbles
-                vis.node.selectAll("circle")
-                    // .transition().duration(200)
-                    .attr("fill-opacity", 0.7);
+                vis.node.selectAll("circle").attr("fill-opacity", 0.7);
                 vis.node.selectAll("text").style("display", "block");
 
-                // Reset text to state abbreviation
+                // Reset text to full state name
                 d3.select(this).select("text")
+                    .style("font-size", "15px")
                     .text(d => d.data.id);
 
                 // Reset the size of the bubble
                 d3.select(this).select("circle")
-                    // .transition().duration(200)
-                    .attr("r", d.r);
+                    .transition().duration(200)
+                    .attr("r", vis.radiusScale(d.data.value));
             });
     }
 }

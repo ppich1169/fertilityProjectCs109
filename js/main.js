@@ -45,6 +45,8 @@ function initMainPage(dataArray) {
     // init bubble chart
     console.log('this is what bubble chart data looks like', dataArray[1])
     myBubbleVis = new BubbleVis('chart-area2', dataArray[1]);
+
+    myScatterVis = new ScatterVis('chart-area3', dataArray[1]);
 }
 
 // Event listeners for category changes
