@@ -27,7 +27,7 @@ class ScatterVis {
         let vis = this;
 
         // Specify the dimensions of the chart.
-        vis.margin = {top: 20, right: 20, bottom: 50, left: 50};
+        vis.margin = {top: 100, right: 20, bottom: 50, left: 50};
         vis.width = document.getElementById(vis.parentElement).clientWidth - vis.margin.left - vis.margin.right;
         vis.height = document.getElementById(vis.parentElement).clientHeight - vis.margin.top - vis.margin.bottom;
 
@@ -65,10 +65,19 @@ class ScatterVis {
         vis.svg.append("text")
             .attr("class", "y-axis-label")
             .attr("x", -vis.height / 2)
-            .attr("y", -vis.margin.left + 10)
+            .attr("y", -vis.margin.left + 20)
             .attr("transform", "rotate(-90)")
             .style("text-anchor", "middle")
             .text("Fertility Rate");
+
+        // Append title text
+        vis.title = vis.svg.append("text")
+            .attr("class", "chart-title")
+            .attr("x", vis.width / 2)
+            .attr("y", -vis.margin.top / 2)
+            .attr("text-anchor", "middle")
+            .style("font-size", "16px")
+            .text("Hover over a state:");
 
         // Create a categorical color scale for regions.
         vis.color = d3.scaleOrdinal()
@@ -136,21 +145,75 @@ class ScatterVis {
             .attr("fill", d => vis.color(d.region))
             .attr("fill-opacity", 0.7)
             .on("mouseover", function(event, d) {
+                console.log(d); // Print the data object
                 d3.select(this).attr("r", 10).attr("fill-opacity", 1);
-                vis.svg.append("text")
-                    .attr("class", "tooltip")
-                    .attr("x", vis.xScale(d.poverty) + 10)
-                    .attr("y", vis.yScale(d.fertility) - 10)
-                    .text(`${d.id}`);
+                vis.title.text(d.id); // Change the title to the state name
             })
             .on("mouseout", function(event, d) {
                 d3.select(this).attr("r", 5).attr("fill-opacity", 0.7);
-                vis.svg.selectAll(".tooltip").remove();
+                vis.title.text("CS171 - Fertility Project"); // Reset the title
             });
 
         // Update existing circles
         vis.circles
             .attr("cx", d => vis.xScale(d.poverty))
+            .attr("cy", d => vis.yScale(d.fertility))
+            .attr("r", 5)
+            .attr("fill", d => vis.color(d.region))
+            .attr("fill-opacity", 0.7);
+
+        // Remove old circles
+        vis.circles.exit().remove();
+    }
+
+    // Update category
+    updateCategory(category) {
+        let vis = this;
+
+        // Update the x-axis label
+        vis.svg.select(".x-axis-label").text(category.replace(/_/g, " "));
+
+        // Update the filtered data based on the selected category
+        vis.filteredData = vis.data.filter(d => +d.Year === 2022).map(d => ({
+            id: d.State,
+            name: d.StateName, // Assuming StateName is the full name of the state
+            xValue: +d[category],
+            fertility: +d.fertility_rate,
+            region: vis.getRegion(d.State)
+        }));
+
+        // Update scales
+        vis.xScale.domain([d3.min(vis.filteredData, d => d.xValue)*0.8, d3.max(vis.filteredData, d => d.xValue)]);
+        vis.yScale.domain([d3.min(vis.filteredData, d => d.fertility)-5, d3.max(vis.filteredData, d => d.fertility)]);
+
+        // Update axes
+        vis.svg.select(".x-axis").call(vis.xAxis);
+        vis.svg.select(".y-axis").call(vis.yAxis);
+
+        // Bind data to circles
+        vis.circles = vis.svg.selectAll("circle")
+            .data(vis.filteredData);
+
+        // Enter new circles
+        vis.circles.enter().append("circle")
+            .attr("cx", d => vis.xScale(d.xValue))
+            .attr("cy", d => vis.yScale(d.fertility))
+            .attr("r", 5)
+            .attr("fill", d => vis.color(d.region))
+            .attr("fill-opacity", 0.7)
+            .on("mouseover", function(event, d) {
+                console.log(d.id); // Print the data object
+                d3.select(this).attr("r", 10).attr("fill-opacity", 1);
+                vis.title.text(d.id); // Change the title to the state name
+            })
+            .on("mouseout", function(event, d) {
+                d3.select(this).attr("r", 5).attr("fill-opacity", 0.7);
+                vis.title.text("State Chosen"); // Reset the title
+            });
+
+        // Update existing circles
+        vis.circles
+            .attr("cx", d => vis.xScale(d.xValue))
             .attr("cy", d => vis.yScale(d.fertility))
             .attr("r", 5)
             .attr("fill", d => vis.color(d.region))

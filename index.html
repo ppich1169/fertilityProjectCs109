@@ -23,14 +23,11 @@
     <h1>CS171 - Fertility Project</h1>
 </div>
 
-
-
 <!-- Parallax Section for Bubble Chart -->
 <div class="parallax" id="bubble-section" data-aos="fade-up">
     <h1>2022 Fertility Rates for States in the US</h1>
     <svg width="50%" height="100%" id="chart-area2"></svg>
 </div>
-
 
 <!-- Two Column Layout -->
 <div class="container" data-aos="fade-right">
@@ -69,26 +66,48 @@
                 <svg width="1000" height="500" id="chart-area1"></svg>
             </div>
         </div>
-        <div class="column">Filler textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller textFiller text</div>
     </div>
-
-<!-- Parallax Section for Map -->
-
-
-<div class="parallax" id="other-chart" data-aos="fade-up">
-    <h1>Other Chart</h1>
-    <svg width="100%" height="1000" id="chart-area3"></svg>
 </div>
 
+<!-- Parallax Section for Scatter Chart -->
+<div class="container" data-aos="fade-right">
+    <div class="flex-container">
+        <div class="column">
+            <div class="parallax" id="scatter-section" data-aos="fade-up">
+                <label for="scatterCategorySelector" class="form-label">Select Category:</label>
+                <select class="form-select" id="scatterCategorySelector" onchange="scatterCategoryChange()">
+                    <option value="religousness_rate">Fertility Rate VS Religousness Rate</option>
+                    <option value="percent_white">Fertility Rate VS Percent White</option>
+                    <option value="percent_black">Fertility Rate VS Percent Black</option>
+                    <option value="percent_hispanic">Fertility Rate VS Percent Hispanic</option>
+                    <option value="percent_asian">Fertility Rate VS Percent Asian</option>
+                    <option value="percent_mixed_race">Fertility Rate VS Percent Mixed Race</option>
+                    <option value="poverty_measure">Fertility Rate VS Poverty Measure</option>
+                    <option value="foreign_born">Fertility Rate VS Foreign Born</option>
+                    <option value="percent_bachelors_or_higher">Fertility Rate VS Percent Bachelors or Higher</option>
+                    <option value="percent_less_than_high_school">Fertility Rate VS Percent Less Than High School</option>
+                    <option value="percent_high_school_or_some_college">Fertility Rate VS Percent High School or Some College</option>
+                    <option value="political_ranking">Fertility Rate VS Political Ranking</option>
+                    <option value="latest_abortion">Fertility Rate VS Latest Abortion</option>
+                    <option value="no_abortion_law">Fertility Rate VS No Abortion Law</option>
+                </select>
+                <!-- <h1 id="Scatter_Chart_title">Scatter Chart</h1> -->
+                <svg width="100%" height="1000" id="chart-area3"></svg>
+            </div>
+        </div>
+        <div class="column">
+            <h1>text</h1>
+        </div> 
+    </div> 
 
 <div class="parallax" id="other-chart" data-aos="fade-up">
     <h1>Other Chart</h1>
-    <!-- <svg width="50%" height="100%" id="chart-area3"></svg> -->
+    <svg width="100%" height="1000" id="chart-area4"></svg>
 </div>
 
 <div class="parallax" id="other-chart" data-aos="fade-up">
     <h1>Concluding text/images</h1>
-    <svg width="50%" height="100%" id="chart-area3"></svg>
+    <!-- <svg width="50%" height="100%" id="chart-area3"></svg> -->
 </div>
 
 <!-- embedding JS libraries -->
@@ -109,6 +128,7 @@
 <script src="js/mapVis.js"></script>
 <script src="js/bubbleVis.js"></script>
 <script src="js/scatterVis.js"></script>
+<script src="js/radarVis.js"></script>
 <script>
     AOS.init();
 </script>

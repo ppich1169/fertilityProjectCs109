@@ -1,0 +1,5 @@
+Region,Variables,Values
+Northeast,"['religousness_rate', 'percent_mixed_race', 'no_abortion_law', 'latest_abortion', 'poverty_measure']","[0.5747177122477679, 0.8822004143968866, 1.019452143521861, 1.0632167181845502, 1.3298401511162932]"
+Midwest,"['political_ranking', 'percent_black', 'foreign_born', 'percent_hispanic', 'covid_year']","[0.4757341066211585, 0.6173896105042855, 0.6749657622860705, 0.8569897476472296, 1.3363810231288122]"
+South,"['political_ranking', 'no_abortion_law', 'percent_less_than_high_school', 'percent_black', 'covid_year']","[0.5750074025251993, 0.7113039252985592, 0.8084571936835896, 0.881250501531577, 1.3446487338427808]"
+West,"['foreign_born', 'percent_hispanic', 'poverty_measure', 'covid_year', 'percent_black']","[0.5532234344197048, 0.8431076320329947, 0.8803126065483561, 1.1638760455009052, 1.1837020777021319]"
