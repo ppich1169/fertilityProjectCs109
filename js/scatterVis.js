@@ -141,24 +141,24 @@ class ScatterVis {
         vis.circles.enter().append("circle")
             .attr("cx", d => vis.xScale(d.poverty))
             .attr("cy", d => vis.yScale(d.fertility))
-            .attr("r", 5)
+            .attr("r", 10)
             .attr("fill", d => vis.color(d.region))
             .attr("fill-opacity", 0.7)
             .on("mouseover", function(event, d) {
                 console.log(d); // Print the data object
-                d3.select(this).attr("r", 10).attr("fill-opacity", 1);
+                d3.select(this).attr("r", 12).attr("fill-opacity", 1);
                 vis.title.text(d.id); // Change the title to the state name
             })
             .on("mouseout", function(event, d) {
-                d3.select(this).attr("r", 5).attr("fill-opacity", 0.7);
-                vis.title.text("CS171 - Fertility Project"); // Reset the title
+                d3.select(this).attr("r", 10).attr("fill-opacity", 0.7);
+                vis.title.text("Hover over a circle to see which state:"); // Reset the title
             });
 
         // Update existing circles
         vis.circles
             .attr("cx", d => vis.xScale(d.poverty))
             .attr("cy", d => vis.yScale(d.fertility))
-            .attr("r", 5)
+            .attr("r", 10)
             .attr("fill", d => vis.color(d.region))
             .attr("fill-opacity", 0.7);
 
@@ -198,7 +198,7 @@ class ScatterVis {
         vis.circles.enter().append("circle")
             .attr("cx", d => vis.xScale(d.xValue))
             .attr("cy", d => vis.yScale(d.fertility))
-            .attr("r", 5)
+            .attr("r", 10)
             .attr("fill", d => vis.color(d.region))
             .attr("fill-opacity", 0.7)
             .on("mouseover", function(event, d) {
@@ -215,7 +215,7 @@ class ScatterVis {
         vis.circles
             .attr("cx", d => vis.xScale(d.xValue))
             .attr("cy", d => vis.yScale(d.fertility))
-            .attr("r", 5)
+            .attr("r", 10)
             .attr("fill", d => vis.color(d.region))
             .attr("fill-opacity", 0.7);
 

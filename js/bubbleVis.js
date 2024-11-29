@@ -42,15 +42,17 @@ class BubbleVis {
         // Create the pack layout with increased padding for spacing out the bubbles.
         vis.pack = d3.pack()
             .size([vis.width - vis.margin * 2, vis.height - vis.margin * 2])
-            .padding(10); // Increase padding to space out the bubbles
+            .padding(20); // Increase padding to space out the bubbles
 
         // Create a scale for the circle radii
         vis.radiusScale = d3.scaleSqrt()
             .domain([d3.min(vis.data, d => +d.fertility_rate), d3.max(vis.data, d => +d.fertility_rate)])
-            .range([10, vis.width / 8]);
+            .range([10, 100]);
 
         // Select the parent container
-        vis.svg = d3.select(`#${vis.parentElement}`);
+        vis.svg = d3.select(`#${vis.parentElement}`)
+            .attr("width", vis.width)
+            .attr("height", vis.height);
 
         // Wrangle data
         vis.wrangleData();
@@ -97,12 +99,23 @@ class BubbleVis {
     updateVis() {
         let vis = this;
 
+        // Center the group element within the SVG
+        const centerX = (vis.width - vis.margin * 2) / 2;
+        const centerY = (vis.height - vis.margin * 2) / 2;
+
+        // Create a scale to space out the x positions
+        const xScale = d3.scaleLinear()
+            .domain([0, vis.width - vis.margin * 2])
+            .range([-vis.width / 2, vis.width * 1.5]);
+
         // Place each (leaf) node according to the layout’s x and y values.
         vis.node = vis.svg.append("g")
+            .attr("transform", `translate(${vis.margin},${vis.margin})`)
             .selectAll("g")
             .data(vis.root.leaves())
             .join("g")
-            .attr("transform", d => `translate(${d.x},${d.y})`);
+            .attr("transform", d => `translate(${xScale(d.x)},${d.y})`);
+        console.log("VIS", vis.node);
 
         // Add a title.
         vis.node.append("title")
@@ -123,21 +136,23 @@ class BubbleVis {
 
         // Add hover functionality
         vis.node.on("mouseover", function(event, d) {
-                // Make other bubbles more transparent
-                vis.node.selectAll("circle").attr("fill-opacity", 0.3);
-                vis.node.selectAll("text").style("display", "none");
+            // Make other bubbles more transparent
+            vis.node.selectAll("circle").attr("fill-opacity", 0.3);
+            vis.node.selectAll("text").style("display", "none");
 
-                // Show value and state name of the hovered bubble
-                d3.select(this).select("circle").attr("fill-opacity", 1)
-                    .transition().duration(200)
-                    .attr("r", vis.radiusScale(d.data.value) * 1.2); // Increase the size of the bubble
+            // Show value and state name of the hovered bubble
+            d3.select(this).select("circle")
+                .attr("fill-opacity", 1)
+                .attr("fill", "orange") // Change color to orange
+                .transition().duration(200)
+                .attr("r", vis.radiusScale(d.data.value) * 1.2); // Increase the size of the bubble
 
-                d3.select(this).select("text")
-                    .style("display", "block")
-                    .style("font-size", "30px")
-                    .text(`${d.data.id}: ${vis.format(d.value)}`);
-            })
-            .on("mouseout", function(event, d) {
+            d3.select(this).select("text")
+                .style("display", "block")
+                .style("font-size", "30px")
+                .text(`${d.data.id}: ${vis.format(d.value)}`);
+        })
+            .on("mouseout", function (event, d) {
                 // Reset opacity of all bubbles
                 vis.node.selectAll("circle").attr("fill-opacity", 0.7);
                 vis.node.selectAll("text").style("display", "block");
@@ -147,10 +162,37 @@ class BubbleVis {
                     .style("font-size", "15px")
                     .text(d => d.data.id);
 
-                // Reset the size of the bubble
+                // Reset the size and color of the bubble
                 d3.select(this).select("circle")
+                    .attr("fill", d => vis.color(d.data.region)) // Reset color to original
                     .transition().duration(200)
                     .attr("r", vis.radiusScale(d.data.value));
             });
+
+        // Add legend
+        const legend = vis.svg.append("g")
+            .attr("class", "legend")
+            .attr("transform", `translate(${vis.margin},${vis.height/2})`); // Position at the bottom
+
+        const legendData = Object.keys(vis.regions);
+
+        legend.selectAll("rect")
+            .data(legendData)
+            .enter().append("rect")
+            .attr("x", 0)
+            .attr("y", (d, i) => i * 60) // Increase spacing between legend items
+            .attr("width", 50) // Increase width of legend rectangles
+            .attr("height", 50) // Increase height of legend rectangles
+            .style("fill", d => vis.color(d));
+
+        legend.selectAll("text")
+            .data(legendData)
+            .enter().append("text")
+            .attr("x", 60) // Adjust x position to match increased rectangle size
+            .attr("y", (d, i) => i * 60 + 25) // Adjust y position to match increased rectangle size
+            .attr("dy", ".35em")
+            .style("text-anchor", "start")
+            .style("font-size", "30px") // Increase font size
+            .text(d => d);
     }
 }

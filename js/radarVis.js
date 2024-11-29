@@ -76,9 +76,9 @@ class RadarVis {
         // Define positions for the four quadrants
         const positions = [
             { x: vis.width / 4, y: vis.height / 4 },
-            { x: 3 * vis.width / 4, y: vis.height / 4 },
-            { x: vis.width / 4, y: 3 * vis.height / 4 },
-            { x: 3 * vis.width / 4, y: 3 * vis.height / 4 }
+            { x: 3 * vis.width / 4+50, y: vis.height / 4 },
+            { x: vis.width / 4, y: 3 * vis.height / 4 +50},
+            { x: 3 * vis.width / 4+50, y: 3 * vis.height / 4 +50}
         ];
 
         // Draw radar charts for each region
@@ -94,17 +94,42 @@ class RadarVis {
 
             radarGroup.append("text")
                 .attr("x", 0)
-                .attr("y", -vis.radius - vis.margin.top / 2)
+                .attr("y", -vis.radius + vis.margin.top-60)
                 .attr("text-anchor", "middle")
                 .style("font-size", "16px")
                 .text(regionData.region);
+
+            // Draw concentric circles
+            const levels = 5;
+            for (let level = 0; level <= levels; level++) {
+                radarGroup.append("circle")
+                    .attr("cx", 0)
+                    .attr("cy", 0)
+                    .attr("r", vis.radius / levels * level)
+                    .style("fill", "none")
+                    .style("stroke", "grey")
+                    .style("stroke-dasharray", "2,2");
+            }
+
+            // Draw axis lines
+            radarGroup.selectAll(".axis-line")
+                .data(regionData.data)
+                .enter().append("line")
+                .attr("class", "axis-line")
+                .attr("x1", 0)
+                .attr("y1", 0)
+                .attr("x2", d => vis.radiusScale(d.value) * Math.cos(vis.angleScale(d.axis) - Math.PI / 2))
+                .attr("y2", d => vis.radiusScale(d.value) * Math.sin(vis.angleScale(d.axis) - Math.PI / 2))
+                .style("stroke", "grey")
+                .style("stroke-width", "1px");
 
             // Draw radar chart background
             radarGroup.append("path")
                 .datum(regionData.data)
                 .attr("class", "radar-background")
                 .attr("d", vis.line)
-                .style("fill", "lightgrey")
+                .style("fill", "#D49999")
+                .style("opacity", 0.5)
                 .style("stroke", "none");
 
             // Draw radar chart
@@ -113,7 +138,8 @@ class RadarVis {
                 .attr("class", "radar-area")
                 .attr("d", vis.line)
                 .style("fill", "none")
-                .style("stroke", "steelblue")
+                .style("stroke", "#CC5500")
+                .style("opacity", 1)
                 .style("stroke-width", 2);
 
             // Add units to each data point
@@ -122,7 +148,7 @@ class RadarVis {
                 .enter().append("text")
                 .attr("class", "unit-label")
                 .attr("x", d => vis.radiusScale(d.value) * Math.cos(vis.angleScale(d.axis) - Math.PI / 2))
-                .attr("y", d => vis.radiusScale(d.value) * Math.sin(vis.angleScale(d.axis) - Math.PI / 2))
+                .attr("y", d => vis.radiusScale(d.value) * Math.sin(vis.angleScale(d.axis) - Math.PI / 2) * 1.5)
                 .attr("dy", "0.35em")
                 .attr("text-anchor", "middle")
                 .style("font-size", "12px")

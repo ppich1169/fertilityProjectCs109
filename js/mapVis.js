@@ -105,7 +105,7 @@ class MapVis {
             .style("stroke-width", "1px");
 
         // Initialize color scale
-        vis.colorScale = d3.scaleSequential(d3.interpolateBlues);
+        vis.colorScale = d3.scaleSequential(d3.interpolateOranges);
 
         // Create legend
         vis.legend = vis.svg.append("g")
@@ -133,7 +133,7 @@ class MapVis {
             .selectAll("stop")
             .data([
                 { offset: "0%", color: "white" },
-                { offset: "100%", color: "blue" }
+                { offset: "100%", color: "darkOrange" }
             ])
             .enter().append("stop")
             .attr("offset", d => d.offset)

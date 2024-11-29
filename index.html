@@ -24,16 +24,110 @@
 </div>
 
 <!-- Parallax Section for Bubble Chart -->
+<div class="mb-3">
+    <!-- <div class="text-center" data-aos="fade-left">
+        <img src="websiteImages/imageOfStroller.jpg" alt="Fertility Chart" class="img-fluid">
+    </div> -->
+    <div class="text_for_descriptions" data-aos="fade-left">
+        <h1> Why we decided to look into the US fertility rate?</h1>
+        <div class="columns">
+            <div class="column">
+                <h3>
+                    Over the past fifty years, 
+                    fertility rates in the US have plummeted and are currently at a 
+                    historic low. Conversations about why fertility has fallen so 
+                    substantially and how we can address the implications of this shift 
+                    for government programs like social security have been quite salient 
+                    in recent public discourse and in the 2024 election cycle. 
+                    <br>
+                    <br>
+                    Interestingly, there is significant variation in fertility 
+                    rates across US states. We’d like to understand the relative 
+                    importance of various factors in determining a state’s fertility rate.
+                    <br> 
+                    <br>
+                    We plan to run a multiple regression of fertility rate 
+                    (can get state-by-state here from the CDC’s National Center for Health Statistics) 
+                    on a number of regressors
+                    <br>
+                    <br>
+                    We used our previous knowledge and assumptions to create a 15 dataset of predictors that we believe may influence fertility rates.
+                    
+                    Because fertility rate is evaluated statewide and states vary significantly in population size, we have decided that for all of the predictors, we are going to essentially normalize them by looking at the percentage of each state that fall into a specific category. 
+                    <br>
+                    <br>
+                    Our features can be sorted into 5 main categories: <br> <br>
+                    Time and Context, Cultural and Religious Factors, Demographic Factors, Socioeconomic Factors, & Political and Policy Factors
+                </h3>
+            </div>
+            <div class="column">
+                <h3>
+                    For the first visualization, I decided to create a bubble chart that shows the fertility rates for each state in the US for the year 2022. The size of the bubble represents the fertility rate, and the color represents the region of the US that the state is in.
+                <br>
+                <br>
+                We wanted to give a broader understanding of the fertility rates in the US and how they vary across states. This visualization allows the user to see the fertility rates for each state at a glance and compare them to other states. The user can also hover over each bubble to see the exact fertility rate for that state.
+                <br>
+                <br>
+                What struck me the most was how the fertility rates varied so much across states, with some states having much higher fertility rates than others, specifically between regions. If we examine the South and compare the general sizes of those states with the North-East, there's a stark contrast.
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="parallax" id="bubble-section" data-aos="fade-up">
     <h1>2022 Fertility Rates for States in the US</h1>
-    <svg width="50%" height="100%" id="chart-area2"></svg>
+    <p>*General fertility rate per 1,000 women aged 15–44</p>
+    <svg width="100%" height="1000" id="chart-area2"></svg>
 </div>
 
 <!-- Two Column Layout -->
-<div class="container" data-aos="fade-right">
-    <div class="flex-container">
-        <div class="column">
-            <div class="mb-3">
+<div class="mb-3">                
+    <div class="text_for_descriptions" data-aos="fade-left">
+        <h1> Variables We Examined</h1>
+        <div class="columns">
+            <div class="column">
+                <h3>
+                The second visualization is a map of the US that shows the fertility rates for each state in the US for the year 2020. The color of the state represents the fertility rate, with darker colors indicating higher fertility rates. The map also includes a slider that allows the user to select a different year to view the fertility rates for that year.
+                <br>
+                <br>
+                </h3>
+                <h5> Time and Context
+                    <ul>
+                        <li>covid_year: Identifies the year during the COVID-19 pandemic being analyzed, which could impact various societal factors.
+                        </li>
+                    </ul>
+
+                    Cultural and Religious Factors
+                    <ul>
+                        <li>religiousness_rate: Measures the level of religious adherence within a population, often linked to cultural and societal norms</li>
+                    </ul>
+
+                    Demographic Factors
+                    <ul>
+                        <li>percent_white: Percentage of the population identifying as White</li>
+                        <li>percent_black: Percentage of the population identifying as Black or African American</li>
+                        <li>percent_hispanic: Percentage of the population identifying as Hispanic or Latino</li>
+                        <li>percent_asian: Percentage of the population identifying as Asian</li>
+                        <li>percent_mixed_race: Percentage of the population identifying as two or more racial groups</li>
+                        <li>foreign_born: Percentage of the population born outside the country, reflecting immigration levels</li>
+                    </ul>
+                    Socioeconomic Factors
+                    <ul>
+                        <li>poverty_measure: A metric indicating poverty levels within a population, such as the percentage below the poverty line</li>
+                        <li>percent_bachelors_or_higher: Percentage of the population with at least a bachelor’s degree, indicating higher education attainment</li>
+                        <li>percent_less_than_high_school: Percentage of the population without a high school diploma, highlighting lower education levels</li>
+                        <li>percent_high_school_or_some_college: Percentage of the population with a high school diploma or some college education, representing mid-level education attainment</li>
+                    </ul>
+                    Political and Policy Factors
+                    <ul>
+                        <li>political_ranking: A measure of political leanings, such as conservative or liberal tendencies, within a region</li>
+                        <li>latest_abortion: Year or status of the most recent abortion-related legislation, indicating changes in abortion policy</li>
+                        <li>no_abortion_law:  Indicator of whether a region lacks specific abortion laws, reflecting gaps or omissions in policy</li>
+                    </ul>
+                </h5>
+            </div>
+            <div class="column">
                 <label for="categorySelector" class="form-label">Select Category:</label>
                 <select class="form-select" id="categorySelector" onchange="categoryChange()">
                     <option value="fertility_rate">Fertility Rate</option>
@@ -58,56 +152,83 @@
                     <input type="range" class="form-range" id="yearSlider" min="2018" max="2022" step="1" value="2020" oninput="yearChange()">
                     <span id="yearValue">2020</span>
                 </div>
-            </div>
-        </div>
-
-        <div class="column">
-            <div class="parallax" id="map-section" data-aos="fade-up">
-                <svg width="1000" height="500" id="chart-area1"></svg>
+                <div class="parallax" id="map-section" data-aos="fade-up">
+                    <svg width="100%" height="500" id="chart-area1"></svg>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Parallax Section for Scatter Chart -->
-<div class="container" data-aos="fade-right">
-    <div class="flex-container">
-        <div class="column">
-            <div class="parallax" id="scatter-section" data-aos="fade-up">
-                <label for="scatterCategorySelector" class="form-label">Select Category:</label>
-                <select class="form-select" id="scatterCategorySelector" onchange="scatterCategoryChange()">
-                    <option value="religousness_rate">Fertility Rate VS Religousness Rate</option>
-                    <option value="percent_white">Fertility Rate VS Percent White</option>
-                    <option value="percent_black">Fertility Rate VS Percent Black</option>
-                    <option value="percent_hispanic">Fertility Rate VS Percent Hispanic</option>
-                    <option value="percent_asian">Fertility Rate VS Percent Asian</option>
-                    <option value="percent_mixed_race">Fertility Rate VS Percent Mixed Race</option>
-                    <option value="poverty_measure">Fertility Rate VS Poverty Measure</option>
-                    <option value="foreign_born">Fertility Rate VS Foreign Born</option>
-                    <option value="percent_bachelors_or_higher">Fertility Rate VS Percent Bachelors or Higher</option>
-                    <option value="percent_less_than_high_school">Fertility Rate VS Percent Less Than High School</option>
-                    <option value="percent_high_school_or_some_college">Fertility Rate VS Percent High School or Some College</option>
-                    <option value="political_ranking">Fertility Rate VS Political Ranking</option>
-                    <option value="latest_abortion">Fertility Rate VS Latest Abortion</option>
-                    <option value="no_abortion_law">Fertility Rate VS No Abortion Law</option>
-                </select>
-                <!-- <h1 id="Scatter_Chart_title">Scatter Chart</h1> -->
-                <svg width="100%" height="1000" id="chart-area3"></svg>
+<div class="mb-3">                
+    <div class="text_for_descriptions" data-aos="fade-left">
+        <h1> Relationship between Fertility Rate and Variables</h1>
+        <div class="columns">
+            <div class="column">
+                <div class="parallax" id="scatter-section" data-aos="fade-up">
+                    <label for="scatterCategorySelector" class="form-label">Select Category:</label>
+                    <select class="form-select" id="scatterCategorySelector" onchange="scatterCategoryChange()">
+                        <option value="religousness_rate">Fertility Rate VS Religousness Rate</option>
+                        <option value="percent_white">Fertility Rate VS Percent White</option>
+                        <option value="percent_black">Fertility Rate VS Percent Black</option>
+                        <option value="percent_hispanic">Fertility Rate VS Percent Hispanic</option>
+                        <option value="percent_asian">Fertility Rate VS Percent Asian</option>
+                        <option value="percent_mixed_race">Fertility Rate VS Percent Mixed Race</option>
+                        <option value="poverty_measure">Fertility Rate VS Poverty Measure</option>
+                        <option value="foreign_born">Fertility Rate VS Foreign Born</option>
+                        <option value="percent_bachelors_or_higher">Fertility Rate VS Percent Bachelors or Higher</option>
+                        <option value="percent_less_than_high_school">Fertility Rate VS Percent Less Than High School</option>
+                        <option value="percent_high_school_or_some_college">Fertility Rate VS Percent High School or Some College</option>
+                        <option value="political_ranking">Fertility Rate VS Political Ranking</option>
+                        <option value="latest_abortion">Fertility Rate VS Latest Abortion</option>
+                        <option value="no_abortion_law">Fertility Rate VS No Abortion Law</option>
+                    </select>
+
+                    <svg width="100%" height="1000" id="chart-area3"></svg>
+                </div>
+            </div>
+            <div class="column">
+                <h3>
+                    The third visualization is a scatter plot that shows the relationship between fertility rates and various predictors. The user can select which predictor to display on the x-axis and the y-axis, and the plot will update accordingly. The plot also includes a trend line to show the relationship between the two variables.
+                    <br>
+                    <br>
+                    A couple relationships I want to point our are:
+                    <br>
+                        <br>
+                    <ul>
+                        <li>"-" vs Percent Black: Both the top and the bottom halves of the fertility rate, have a low percentage rate. However, the middle half (specifically for the Southern countries) in terms of fertility rate, have surprisingly high percentages of black people.</li>
+                        <br>
+                        <br>
+                        <li>"-" vs Percent Hispanic: It has a similar relationship to the "-" vs Percent black. It just not as obvious. In addition, New Mexico stands out in this specific relationship.</li>
+                        <br>
+                        <br>
+                        <li>"-" vs Percent Less Than High School: Most of the states are condensed in 0.7-0.76 percent Less Than High School; however, the fertility rates vary so much.</li>
+                        <br>
+                        <br>
+                        <li>"-" vs Percent political_ranking: THere's almost a negative linear relationship for this specific for this relationship.</li>
+                    </ul>
+                </h3>
             </div>
         </div>
-        <div class="column">
-            <h1>text</h1>
-        </div> 
-    </div> 
-
-<div class="parallax" id="other-chart" data-aos="fade-up">
-    <h1>Other Chart</h1>
-    <svg width="100%" height="1000" id="chart-area4"></svg>
+    </div>
 </div>
 
-<div class="parallax" id="other-chart" data-aos="fade-up">
-    <h1>Concluding text/images</h1>
-    <!-- <svg width="50%" height="100%" id="chart-area3"></svg> -->
+<div class="mb-3">                
+    <div class="text_for_descriptions" data-aos="fade-left">
+        <h1> Top Variables impacting Fertility Rate for each Respective Region</h1>
+        <div class="columns">
+            <div class="column">
+                <h3>
+                    For the final visualization, I decided to create a radar chart that shows the fertility rates for each state in the US for the year 2022. The size of the bubble represents the fertility rate, and the color represents the region of the US that the state is in. Each of the variables that are present were the top 5 most impactful variables that we found in our regression analysis.
+                </h3>
+            </div>
+            <div class="column">
+                <div class="parallax" id="other-chart" data-aos="fade-up">
+                    <svg width="100%" height="1200" id="chart-area4"></svg>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- embedding JS libraries -->
