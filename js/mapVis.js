@@ -52,7 +52,7 @@ class MapVis {
         let vis = this;
 
         // Set up margin conventions
-        vis.margin = { top: 50, right: 20, bottom: 20, left: 100 };
+        vis.margin = { top: 50, right: 20, bottom: 50, left: 20 };
         vis.width = document.getElementById(vis.parentElement).clientWidth - vis.margin.left - vis.margin.right;
         vis.height = document.getElementById(vis.parentElement).clientHeight - vis.margin.top - vis.margin.bottom;
 
@@ -86,13 +86,13 @@ class MapVis {
 
         // Define projection
         vis.projection = d3.geoAlbersUsa()
-            .translate([vis.width / 2, vis.height / 2])
+            .translate([450, vis.height / 2])
             .scale(1000);
 
         // Create a group for the map and apply scaling and translation
         vis.mapGroup = vis.svg.append("g")
             .attr("class", "map-group")
-            .attr("transform", `scale(0.6) translate(${vis.width * 0.1}, ${vis.height * 0.1})`);
+            .attr("transform", `translate(${vis.width / 2 - vis.projection.translate()[0]}, ${vis.height / 2 - vis.projection.translate()[1]})`);
 
         // Draw the map
         vis.states = vis.mapGroup.selectAll(".state")
@@ -110,25 +110,29 @@ class MapVis {
         // Create legend
         vis.legend = vis.svg.append("g")
             .attr("class", "legend")
-            .attr("transform", `translate(${vis.width-100}, ${vis.height/2-100})`);
+            .attr("transform", `translate(${vis.width / 2 - 150}, ${vis.height - vis.margin.bottom})`); // Position at the bottom
 
+        // Add the gradient rectangle
         vis.legend.append("rect")
-            .attr("width", 20)
-            .attr("height", 200)
+            .attr("width", 300) // Adjust width for horizontal legend
+            .attr("height", 20) // Adjust height for horizontal legend
             .style("fill", "url(#gradient)");
 
+        // Add the legend title
         vis.legend.append("text")
-            .attr("x", 25)
-            .attr("y", 0)
+            .attr("x", 150) // Center the text horizontally
+            .attr("y", -10) // Position text above the gradient
             .attr("dy", ".35em")
-            .style("text-anchor", "start")
+            .style("text-anchor", "middle")
+            .style("font-size", "16px") // Increase font size for legend title
             .text("Legend");
 
+        // Define the gradient
         vis.svg.append("defs").append("linearGradient")
             .attr("id", "gradient")
             .attr("x1", "0%")
-            .attr("y1", "100%")
-            .attr("x2", "0%")
+            .attr("y1", "0%")
+            .attr("x2", "100%")
             .attr("y2", "0%")
             .selectAll("stop")
             .data([
@@ -139,16 +143,21 @@ class MapVis {
             .attr("offset", d => d.offset)
             .attr("stop-color", d => d.color);
 
+        // Define the legend scale
         vis.legendScale = d3.scaleLinear()
-            .range([200, 0]);
+            .range([0, 300]); // Adjust range for horizontal legend
 
-        vis.legendAxis = d3.axisRight(vis.legendScale)
+        // Define the legend axis
+        vis.legendAxis = d3.axisBottom(vis.legendScale)
             .ticks(5);
 
+        // Add the legend axis
         vis.legend.append("g")
             .attr("class", "legend-axis")
-            .attr("transform", "translate(20, 0)")
-            .call(vis.legendAxis);
+            .attr("transform", "translate(0, 25)") // Position axis below the gradient
+            .call(vis.legendAxis)
+            .selectAll("text")
+            .style("font-size", "100px"); // Increase font size for axis labels
 
         // Wrangle data
         vis.wrangleData();
