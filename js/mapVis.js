@@ -79,7 +79,8 @@ class MapVis {
             .style("background-color", "white")
             .style("padding", "5px")
             .style("border", "1px solid #ccc")
-            .style("border-radius", "5px");
+            .style("border-radius", "5px")
+            .style("position", "absolute");
 
         // Set up path generator
         vis.path = d3.geoPath();
@@ -92,7 +93,11 @@ class MapVis {
         // Create a group for the map and apply scaling and translation
         vis.mapGroup = vis.svg.append("g")
             .attr("class", "map-group")
-            .attr("transform", `translate(${vis.width / 2 - vis.projection.translate()[0]}, ${vis.height / 2 - vis.projection.translate()[1]})`);
+            .attr("transform", `translate(${vis.width / 2 - vis.projection.translate()[0]}, ${vis.height / 2 - vis.projection.translate()[1]})`)
+            .call(d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended));
 
         // Draw the map
         vis.states = vis.mapGroup.selectAll(".state")
@@ -157,10 +162,26 @@ class MapVis {
             .attr("transform", "translate(0, 25)") // Position axis below the gradient
             .call(vis.legendAxis)
             .selectAll("text")
-            .style("font-size", "100px"); // Increase font size for axis labels
+            .style("font-size", "14px"); // Increase font size for axis labels
 
         // Wrangle data
         vis.wrangleData();
+
+        function dragstarted(event) {
+            d3.select(this).raise().attr("stroke", "black");
+        }
+
+        function dragged(event) {
+            const transform = d3.select(this).attr("transform");
+            const translate = transform.match(/translate\(([^)]+)\)/)[1].split(",");
+            const x = parseFloat(translate[0]) + event.dx;
+            const y = parseFloat(translate[1]) + event.dy;
+            d3.select(this).attr("transform", `translate(${x},${y})`);
+        }
+
+        function dragended(event) {
+            d3.select(this).attr("stroke", null);
+        }
     }
 
     // Process the data
