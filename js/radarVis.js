@@ -21,7 +21,7 @@ class RadarVis {
         vis.margin = { top: 50, right: 50, bottom: 50, left: 50 };
         vis.width = document.getElementById(vis.parentElement).clientWidth - vis.margin.left - vis.margin.right;
         vis.height = document.getElementById(vis.parentElement).clientHeight - vis.margin.top - vis.margin.bottom;
-        vis.radius = Math.min(vis.width, vis.height) / 4; // Adjust radius to fit four charts
+        vis.radius = Math.min(vis.width, vis.height) / 4; 
 
         // Create SVG drawing area
         vis.svg = d3.select(`#${vis.parentElement}`).append("svg")
@@ -52,13 +52,13 @@ class RadarVis {
         vis.radarData = vis.data.map(d => {
             const variables = JSON.parse(d.Variables.replace(/'/g, '"'));
             const values = JSON.parse(d.Values);
-            const units = d.Units ? JSON.parse(d.Units.replace(/'/g, '"')) : []; // Handle missing units
+            const units = d.Units ? JSON.parse(d.Units.replace(/'/g, '"')) : [];
             return {
                 region: d.Region,
                 data: variables.map((variable, i) => ({
-                    axis: variable.replace(/_/g, ' '), // Remove underscores from variable names
+                    axis: variable.replace(/_/g, ' '),
                     value: values[i],
-                    unit: units[i] || '' // Add unit to each data point, handle missing units
+                    unit: units[i] || ''
                 }))
             };
         });
@@ -161,7 +161,7 @@ class RadarVis {
                 .style("font-size", "12px")
                 .style("font-weight", "normal")
                 .text(d => {
-                    console.log(d); // Log the value of d
+                    console.log(d);
                     return `${d.axis} ${d.unit}`;
                 });
         });

@@ -29,7 +29,7 @@ class BubbleVis {
         // Specify the dimensions of the chart.
         vis.width = document.getElementById(vis.parentElement).clientWidth;
         vis.height = document.getElementById(vis.parentElement).clientHeight;
-        vis.margin = 100; // to avoid clipping the root circle stroke
+        vis.margin = 100;
 
         // Specify the number format for values.
         vis.format = d3.format(",d");
@@ -42,7 +42,7 @@ class BubbleVis {
         // Create the pack layout with increased padding for spacing out the bubbles.
         vis.pack = d3.pack()
             .size([vis.width - vis.margin * 2, vis.height - vis.margin * 2])
-            .padding(20); // Increase padding to space out the bubbles
+            .padding(20); 
 
         // Create a scale for the circle radii
         vis.radiusScale = d3.scaleSqrt()
@@ -95,7 +95,7 @@ class BubbleVis {
         // Filter the data to include only the 2022 fertility_rate for each state
         vis.filteredData = vis.data.filter(d => +d.Year === 2022).map(d => ({
             id: d.State,
-            name: d.StateName, // Assuming StateName is the full name of the state
+            name: d.StateName, 
             value: +d.fertility_rate,
             region: vis.getRegion(d.State)
         }));
@@ -147,7 +147,7 @@ class BubbleVis {
         vis.node.append("circle")
             .attr("fill-opacity", 0.7)
             .attr("fill", d => vis.color(d.data.region))
-            .attr("r", d => vis.radiusScale(d.data.value)); // Use the radius scale based on fertility rate
+            .attr("r", d => vis.radiusScale(d.data.value));
 
         // Add the full state name inside the bubble.
         vis.node.append("text")
@@ -165,9 +165,9 @@ class BubbleVis {
             // Show value and state name of the hovered bubble
             d3.select(this).select("circle")
                 .attr("fill-opacity", 1)
-                .attr("fill", "orange") // Change color to orange
+                .attr("fill", "orange") 
                 .transition().duration(200)
-                .attr("r", vis.radiusScale(d.data.value) * 1.2); // Increase the size of the bubble
+                .attr("r", vis.radiusScale(d.data.value) * 1.2);
 
             d3.select(this).select("text")
                 .style("display", "block")
@@ -186,7 +186,7 @@ class BubbleVis {
 
                 // Reset the size and color of the bubble
                 d3.select(this).select("circle")
-                    .attr("fill", d => vis.color(d.data.region)) // Reset color to original
+                    .attr("fill", d => vis.color(d.data.region))
                     .transition().duration(200)
                     .attr("r", vis.radiusScale(d.data.value));
             });
@@ -196,7 +196,7 @@ class BubbleVis {
         // Add legend
         const legend = vis.svg.append("g")
             .attr("class", "legend")
-            .attr("transform", `translate(${vis.margin},${vis.height/2})`); // Position at the bottom
+            .attr("transform", `translate(${vis.margin},${vis.height/2})`);
 
         // Add background to legend
         legend.append("rect")

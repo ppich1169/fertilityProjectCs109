@@ -37,7 +37,7 @@ function showSlides(n) {
 function categoryChange() {
     selectedCategory = document.getElementById('categorySelector').value;
     myMapVis.selectedCategory = selectedCategory;
-    myMapVis.wrangleData(); // Update the map visualization
+    myMapVis.wrangleData(); 
 }
 
 function scatterCategoryChange() {
@@ -51,14 +51,14 @@ function yearChange() {
     selectedYear = document.getElementById('yearSlider').value;
     document.getElementById('yearValue').textContent = selectedYear;
     myMapVis.selectedYear = selectedYear;
-    myMapVis.wrangleData(); // Update the map visualization
+    myMapVis.wrangleData();
 }
 
 // load data using promises
 let promises = [
-    d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/states-albers-10m.json"), // already projected -> you can just scale it to fit your browser window
+    d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/states-albers-10m.json"), 
     d3.csv("combined_dfs/combined_2018_to_2022.csv"),
-    d3.csv("data/top_5_variables_per_region.csv") // Load the top 5 variables per region
+    d3.csv("data/top_5_variables_per_region.csv")
 ];
 
 Promise.all(promises)
@@ -90,7 +90,7 @@ function initMainPage(dataArray) {
 
     // init radar chart
     console.log('this is what top 5 variables per region data looks like', dataArray[2])
-    myRadarVis = new RadarVis('chart-area4', dataArray[2]); // Assuming 'chart-area4' is the container for the radar chart
+    myRadarVis = new RadarVis('chart-area4', dataArray[2]); 
 }
 
 // Event listeners for category changes

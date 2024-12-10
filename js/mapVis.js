@@ -10,7 +10,7 @@ class MapVis {
         this.data = data;
         this.geoData = geoData;
         this.selectedYear = document.getElementById('yearSlider').value;
-        this.selectedCategory = 'fertility_rate'; // Default category
+        this.selectedCategory = 'fertility_rate';
 
         // Group data by year
         this.dataByYear = {};
@@ -115,21 +115,21 @@ class MapVis {
         // Create legend
         vis.legend = vis.svg.append("g")
             .attr("class", "legend")
-            .attr("transform", `translate(${vis.width / 2 - 150}, ${vis.height - vis.margin.bottom})`); // Position at the bottom
+            .attr("transform", `translate(${vis.width / 2 - 150}, ${vis.height - vis.margin.bottom})`);
 
         // Add the gradient rectangle
         vis.legend.append("rect")
-            .attr("width", 300) // Adjust width for horizontal legend
-            .attr("height", 20) // Adjust height for horizontal legend
+            .attr("width", 300)
+            .attr("height", 20)
             .style("fill", "url(#gradient)");
 
         // Add the legend title
         vis.legend.append("text")
-            .attr("x", 150) // Center the text horizontally
-            .attr("y", -10) // Position text above the gradient
+            .attr("x", 150)
+            .attr("y", -10)
             .attr("dy", ".35em")
             .style("text-anchor", "middle")
-            .style("font-size", "16px") // Increase font size for legend title
+            .style("font-size", "16px")
             .text("Legend");
 
         // Define the gradient
@@ -150,7 +150,7 @@ class MapVis {
 
         // Define the legend scale
         vis.legendScale = d3.scaleLinear()
-            .range([0, 300]); // Adjust range for horizontal legend
+            .range([0, 300]);
 
         // Define the legend axis
         vis.legendAxis = d3.axisBottom(vis.legendScale)
@@ -159,10 +159,10 @@ class MapVis {
         // Add the legend axis
         vis.legend.append("g")
             .attr("class", "legend-axis")
-            .attr("transform", "translate(0, 25)") // Position axis below the gradient
+            .attr("transform", "translate(0, 25)")
             .call(vis.legendAxis)
             .selectAll("text")
-            .style("font-size", "14px"); // Increase font size for axis labels
+            .style("font-size", "14px");
 
         // Wrangle data
         vis.wrangleData();
@@ -218,7 +218,7 @@ class MapVis {
             .on("mouseover", function(event, d) {
                 const stateData = vis.filteredData.find(data => data.state === d.properties.name);
                 if (stateData) {
-                    console.log(stateData); // Print state information to the console
+                    console.log(stateData);
                     vis.tooltip.transition().duration(200).style("opacity", .9);
                     vis.tooltip.html(`${stateData.state}: ${stateData[vis.selectedCategory]}`)
                         .style("left", (event.pageX + 5) + "px")
