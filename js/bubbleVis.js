@@ -54,8 +54,32 @@ class BubbleVis {
             .attr("width", vis.width)
             .attr("height", vis.height);
 
+        // Create a group for the bubbles
+        vis.bubbleGroup = vis.svg.append("g")
+            .attr("transform", `translate(${vis.margin},${vis.margin})`)
+            .call(d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended));
+
         // Wrangle data
         vis.wrangleData();
+
+        function dragstarted(event) {
+            d3.select(this).raise().attr("stroke", "black");
+        }
+
+        function dragged(event) {
+            const transform = d3.select(this).attr("transform");
+            const translate = transform.match(/translate\(([^)]+)\)/)[1].split(",");
+            const x = parseFloat(translate[0]) + event.dx;
+            const y = parseFloat(translate[1]) + event.dy;
+            d3.select(this).attr("transform", `translate(${x},${y})`);
+        }
+
+        function dragended(event) {
+            d3.select(this).attr("stroke", null);
+        }
     }
 
     // Process the data
@@ -109,9 +133,7 @@ class BubbleVis {
             .range([-vis.width / 2, vis.width * 1.5]);
 
         // Place each (leaf) node according to the layout’s x and y values.
-        vis.node = vis.svg.append("g")
-            .attr("transform", `translate(${vis.margin},${vis.margin})`)
-            .selectAll("g")
+        vis.node = vis.bubbleGroup.selectAll("g")
             .data(vis.root.leaves())
             .join("g")
             .attr("transform", d => `translate(${xScale(d.x)},${d.y})`);
@@ -169,30 +191,38 @@ class BubbleVis {
                     .attr("r", vis.radiusScale(d.data.value));
             });
 
+        const legendData = Object.keys(vis.regions);
+
         // Add legend
         const legend = vis.svg.append("g")
             .attr("class", "legend")
             .attr("transform", `translate(${vis.margin},${vis.height/2})`); // Position at the bottom
 
-        const legendData = Object.keys(vis.regions);
+        // Add background to legend
+        legend.append("rect")
+            .attr("width", 200)
+            .attr("height", legendData.length * 20 + 20)
+            .attr("fill", "#FCEADE")
+            .attr("stroke", "black");
 
-        legend.selectAll("rect")
+        legend.selectAll("rect.legend-item")
             .data(legendData)
             .enter().append("rect")
-            .attr("x", 0)
-            .attr("y", (d, i) => i * 60) // Increase spacing between legend items
-            .attr("width", 50) // Increase width of legend rectangles
-            .attr("height", 50) // Increase height of legend rectangles
+            .attr("class", "legend-item")
+            .attr("x", 10)
+            .attr("y", (d, i) => i * 20 + 10)
+            .attr("width", 18)
+            .attr("height", 18)
             .style("fill", d => vis.color(d));
 
         legend.selectAll("text")
             .data(legendData)
             .enter().append("text")
-            .attr("x", 60) // Adjust x position to match increased rectangle size
-            .attr("y", (d, i) => i * 60 + 25) // Adjust y position to match increased rectangle size
+            .attr("x", 40)
+            .attr("y", (d, i) => i * 20 + 24)
             .attr("dy", ".35em")
             .style("text-anchor", "start")
-            .style("font-size", "30px") // Increase font size
+            .style("font-size", "12px")
             .text(d => d);
     }
 }
