@@ -76,9 +76,9 @@ class RadarVis {
         // Define positions for the four quadrants
         const positions = [
             { x: vis.width / 4, y: vis.height / 4 },
-            { x: 3 * vis.width / 4 + 50, y: vis.height / 4 },
-            { x: vis.width / 4, y: 3 * vis.height / 4 + 50 },
-            { x: 3 * vis.width / 4 + 50, y: 3 * vis.height / 4 + 50 }
+            { x: 3 * vis.width / 4, y: vis.height / 4 + 50 },
+            { x: vis.width / 4, y: 3 * vis.height / 4 },
+            { x: 3 * vis.width / 4, y: 3 * vis.height / 4 + 50 }
         ];
 
         // Draw radar charts for each region
@@ -94,7 +94,7 @@ class RadarVis {
 
             radarGroup.append("text")
                 .attr("x", 0)
-                .attr("y", -vis.radius + vis.margin.top - 80)
+                .attr("y", -vis.radius - 20)
                 .attr("text-anchor", "middle")
                 .style("font-size", "20px")
                 .style("font-weight", "bold")
