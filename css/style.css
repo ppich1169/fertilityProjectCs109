@@ -33,20 +33,17 @@ body, html {
 
 
 #bubble-section {
-  /* width: 300px; */
-  /* padding: 50px; */
+  padding: 20px; /* Adjusted padding */
   margin: 20px;
-  padding: 10px 100px;
   background-color: #FCEADE; /* Updated background color */
 }
 
 #bubble-section h1 {
+  width: 100%;
   font-size: 150%;
   color: #906666;
   font-weight: bold;
   text-align: center;
-  
-  /* margin-left: 30%; */
 }
 #bubble-section p {
   color: #906666;
@@ -296,7 +293,7 @@ h2 {
   color: #906666;
 }
 #scatter-description{
-  font-size: 40px;
+  font-size: 100%;
   font-weight: normal;
   color: #906666;
 }
