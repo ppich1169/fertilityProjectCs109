@@ -29,7 +29,7 @@ class BubbleVis {
         // Specify the dimensions of the chart.
         vis.width = document.getElementById(vis.parentElement).clientWidth;
         vis.height = document.getElementById(vis.parentElement).clientHeight;
-        vis.margin = 100; // to avoid clipping the root circle stroke
+        vis.margin = 100;
 
         // Specify the number format for values.
         vis.format = d3.format(",d");
@@ -42,7 +42,7 @@ class BubbleVis {
         // Create the pack layout with increased padding for spacing out the bubbles.
         vis.pack = d3.pack()
             .size([vis.width - vis.margin * 2, vis.height - vis.margin * 2])
-            .padding(20); // Increase padding to space out the bubbles
+            .padding(20); 
 
         // Create a scale for the circle radii
         vis.radiusScale = d3.scaleSqrt()
@@ -54,8 +54,32 @@ class BubbleVis {
             .attr("width", vis.width)
             .attr("height", vis.height);
 
+        // Create a group for the bubbles
+        vis.bubbleGroup = vis.svg.append("g")
+            .attr("transform", `translate(${vis.margin},${vis.margin})`)
+            .call(d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended));
+
         // Wrangle data
         vis.wrangleData();
+
+        function dragstarted(event) {
+            d3.select(this).raise().attr("stroke", "black");
+        }
+
+        function dragged(event) {
+            const transform = d3.select(this).attr("transform");
+            const translate = transform.match(/translate\(([^)]+)\)/)[1].split(",");
+            const x = parseFloat(translate[0]) + event.dx;
+            const y = parseFloat(translate[1]) + event.dy;
+            d3.select(this).attr("transform", `translate(${x},${y})`);
+        }
+
+        function dragended(event) {
+            d3.select(this).attr("stroke", null);
+        }
     }
 
     // Process the data
@@ -71,7 +95,7 @@ class BubbleVis {
         // Filter the data to include only the 2022 fertility_rate for each state
         vis.filteredData = vis.data.filter(d => +d.Year === 2022).map(d => ({
             id: d.State,
-            name: d.StateName, // Assuming StateName is the full name of the state
+            name: d.StateName, 
             value: +d.fertility_rate,
             region: vis.getRegion(d.State)
         }));
@@ -109,9 +133,7 @@ class BubbleVis {
             .range([-vis.width / 2, vis.width * 1.5]);
 
         // Place each (leaf) node according to the layout’s x and y values.
-        vis.node = vis.svg.append("g")
-            .attr("transform", `translate(${vis.margin},${vis.margin})`)
-            .selectAll("g")
+        vis.node = vis.bubbleGroup.selectAll("g")
             .data(vis.root.leaves())
             .join("g")
             .attr("transform", d => `translate(${xScale(d.x)},${d.y})`);
@@ -125,7 +147,7 @@ class BubbleVis {
         vis.node.append("circle")
             .attr("fill-opacity", 0.7)
             .attr("fill", d => vis.color(d.data.region))
-            .attr("r", d => vis.radiusScale(d.data.value)); // Use the radius scale based on fertility rate
+            .attr("r", d => vis.radiusScale(d.data.value));
 
         // Add the full state name inside the bubble.
         vis.node.append("text")
@@ -143,9 +165,9 @@ class BubbleVis {
             // Show value and state name of the hovered bubble
             d3.select(this).select("circle")
                 .attr("fill-opacity", 1)
-                .attr("fill", "orange") // Change color to orange
+                .attr("fill", "orange") 
                 .transition().duration(200)
-                .attr("r", vis.radiusScale(d.data.value) * 1.2); // Increase the size of the bubble
+                .attr("r", vis.radiusScale(d.data.value) * 1.2);
 
             d3.select(this).select("text")
                 .style("display", "block")
@@ -164,35 +186,43 @@ class BubbleVis {
 
                 // Reset the size and color of the bubble
                 d3.select(this).select("circle")
-                    .attr("fill", d => vis.color(d.data.region)) // Reset color to original
+                    .attr("fill", d => vis.color(d.data.region))
                     .transition().duration(200)
                     .attr("r", vis.radiusScale(d.data.value));
             });
 
+        const legendData = Object.keys(vis.regions);
+
         // Add legend
         const legend = vis.svg.append("g")
             .attr("class", "legend")
-            .attr("transform", `translate(${vis.margin},${vis.height/2})`); // Position at the bottom
+            .attr("transform", `translate(${vis.margin},${vis.height/2})`);
 
-        const legendData = Object.keys(vis.regions);
+        // Add background to legend
+        legend.append("rect")
+            .attr("width", 200)
+            .attr("height", legendData.length * 20 + 20)
+            .attr("fill", "#FCEADE")
+            .attr("stroke", "black");
 
-        legend.selectAll("rect")
+        legend.selectAll("rect.legend-item")
             .data(legendData)
             .enter().append("rect")
-            .attr("x", 0)
-            .attr("y", (d, i) => i * 60) // Increase spacing between legend items
-            .attr("width", 50) // Increase width of legend rectangles
-            .attr("height", 50) // Increase height of legend rectangles
+            .attr("class", "legend-item")
+            .attr("x", 10)
+            .attr("y", (d, i) => i * 20 + 10)
+            .attr("width", 18)
+            .attr("height", 18)
             .style("fill", d => vis.color(d));
 
         legend.selectAll("text")
             .data(legendData)
             .enter().append("text")
-            .attr("x", 60) // Adjust x position to match increased rectangle size
-            .attr("y", (d, i) => i * 60 + 25) // Adjust y position to match increased rectangle size
+            .attr("x", 40)
+            .attr("y", (d, i) => i * 20 + 24)
             .attr("dy", ".35em")
             .style("text-anchor", "start")
-            .style("font-size", "30px") // Increase font size
+            .style("font-size", "12px")
             .text(d => d);
     }
 }

@@ -14,6 +14,7 @@ body, html {
   flex-wrap: wrap; /* Allow columns to wrap if needed */
 }
 
+
 .columns {
   display: flex;
   flex-wrap: wrap;
@@ -32,21 +33,31 @@ body, html {
 
 
 #bubble-section {
-  /* width: 300px; */
-  padding: 50px;
+  padding: 20px; /* Adjusted padding */
   margin: 20px;
-  padding: 100px 100px;
   background-color: #FCEADE; /* Updated background color */
 }
 
 #bubble-section h1 {
+  width: 100%;
+  font-size: 200%;
   color: #906666;
   font-weight: bold;
   text-align: center;
+}
+#bubble-section p {
+  color: #906666;
+  font-size: 150%;
+  text-align: center;
   /* margin-left: 30%; */
+  padding: 50px 100px;
 }
 
-.text_for_descriptions h1{
+
+
+.text_for_descriptions p{
+  font-weight: normal;
+  font-size: 150%;
   padding: 50px 100px;
   margin-left: 0%;
   width: 100%;
@@ -55,18 +66,30 @@ body, html {
   justify-content: center;
   align-items: center;
   color: #906666;
-  font-weight: bold;
   /* background-color: #FCEADE; */
 }
 
 .text_for_descriptions{
-  margin-left: 0%;
-  padding: 50px 200px;
+  /* margin-left: 0%; */
+  padding: 50px 100px;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
+  /* background-color: #FCEADE; */
+}
+
+.text_for_descriptions h1{
+  padding: 50px 100px;
+  font-size: 200%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #906666;
   font-weight: bold;
   /* background-color: #FCEADE; */
 }
@@ -101,7 +124,7 @@ body, html {
 
 #title-section h1 {
   color: white;
-  font-size: 3em;
+  font-size: 200%;
   font-weight: bold;
 }
 
@@ -114,19 +137,8 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2em;
+  font-size: 200%;
   font-weight: bold;
-}
-
-#bubble-section {
-  width: 100%;
-  padding: 50px 0;
-  text-align: center;
-  background-color: #FCEADE; /* Updated background color */
-}
-
-#bubble-section h1 {
-  color: #906666;
 }
 
 #map-section {
@@ -136,7 +148,7 @@ body, html {
 }
 
 #chart-area1 {
-  background-color: #FCEADE; /* Change this to your desired color */
+  background-color: #FCEADE;
 }
 
 body {
@@ -152,7 +164,7 @@ h1 {
 
 h2 {
   font-weight: 100;
-  font-size: 20px;
+  font-size: 200%;
   margin-bottom: 30px;
   color: #906666;
 }
@@ -209,4 +221,79 @@ h2 {
 
 .column:last-child {
   margin-right: 0;
+}
+.slideshow-container {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.slides {
+  display: none;
+  padding: 100px;
+  text-align: center;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: #FF8A5B;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.dot-container {
+  text-align: center;
+  padding: 20px;
+  /* background: #ddd; */
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #FF8A5B;
+}
+.slideshow-container h2{
+  font-size: 200%;
+}
+
+.slideshow-container p{
+  font-size: 150%;
+  font-weight: bold;
+}
+
+#bubble-description{
+  font-size: 150%;
+  font-weight: normal;
+  color: #906666;
+}
+#scatter-description{
+  font-size: 150%;
+  font-weight: normal;
+  color: #906666;
 }

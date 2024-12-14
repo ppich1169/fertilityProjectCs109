@@ -21,7 +21,7 @@ class RadarVis {
         vis.margin = { top: 50, right: 50, bottom: 50, left: 50 };
         vis.width = document.getElementById(vis.parentElement).clientWidth - vis.margin.left - vis.margin.right;
         vis.height = document.getElementById(vis.parentElement).clientHeight - vis.margin.top - vis.margin.bottom;
-        vis.radius = Math.min(vis.width, vis.height) / 4; // Adjust radius to fit four charts
+        vis.radius = Math.min(vis.width, vis.height) / 4; 
 
         // Create SVG drawing area
         vis.svg = d3.select(`#${vis.parentElement}`).append("svg")
@@ -52,13 +52,13 @@ class RadarVis {
         vis.radarData = vis.data.map(d => {
             const variables = JSON.parse(d.Variables.replace(/'/g, '"'));
             const values = JSON.parse(d.Values);
-            const units = d.Units ? JSON.parse(d.Units.replace(/'/g, '"')) : []; // Handle missing units
+            const units = d.Units ? JSON.parse(d.Units.replace(/'/g, '"')) : [];
             return {
                 region: d.Region,
                 data: variables.map((variable, i) => ({
-                    axis: variable,
+                    axis: variable.replace(/_/g, ' '),
                     value: values[i],
-                    unit: units[i] || '' // Add unit to each data point, handle missing units
+                    unit: units[i] || ''
                 }))
             };
         });
@@ -76,9 +76,9 @@ class RadarVis {
         // Define positions for the four quadrants
         const positions = [
             { x: vis.width / 4, y: vis.height / 4 },
-            { x: 3 * vis.width / 4+50, y: vis.height / 4 },
-            { x: vis.width / 4, y: 3 * vis.height / 4 +50},
-            { x: 3 * vis.width / 4+50, y: 3 * vis.height / 4 +50}
+            { x: 3 * vis.width / 4, y: vis.height / 4 + 50 },
+            { x: vis.width / 4, y: 3 * vis.height / 4 },
+            { x: 3 * vis.width / 4, y: 3 * vis.height / 4 + 50 }
         ];
 
         // Draw radar charts for each region
@@ -94,18 +94,25 @@ class RadarVis {
 
             radarGroup.append("text")
                 .attr("x", 0)
-                .attr("y", -vis.radius + vis.margin.top-60)
+                .attr("y", -vis.radius - 20)
                 .attr("text-anchor", "middle")
-                .style("font-size", "16px")
+                .style("font-size", "20px")
+                .style("font-weight", "bold")
                 .text(regionData.region);
 
-            // Draw concentric circles
+            // Draw pentagon background
             const levels = 5;
             for (let level = 0; level <= levels; level++) {
-                radarGroup.append("circle")
-                    .attr("cx", 0)
-                    .attr("cy", 0)
-                    .attr("r", vis.radius / levels * level)
+                const r = vis.radius / levels * level;
+                const points = d3.range(0, 5).map(i => {
+                    const angle = (i / 5) * 2 * Math.PI;
+                    return [
+                        r * Math.cos(angle - Math.PI / 2),
+                        r * Math.sin(angle - Math.PI / 2)
+                    ];
+                });
+                radarGroup.append("polygon")
+                    .attr("points", points.map(d => d.join(",")).join(" "))
                     .style("fill", "none")
                     .style("stroke", "grey")
                     .style("stroke-dasharray", "2,2");
@@ -147,13 +154,14 @@ class RadarVis {
                 .data(regionData.data)
                 .enter().append("text")
                 .attr("class", "unit-label")
-                .attr("x", d => vis.radiusScale(d.value) * Math.cos(vis.angleScale(d.axis) - Math.PI / 2))
-                .attr("y", d => vis.radiusScale(d.value) * Math.sin(vis.angleScale(d.axis) - Math.PI / 2) * 1.5)
+                .attr("x", d => (vis.radius + 10) * Math.cos(vis.angleScale(d.axis) - Math.PI / 2))
+                .attr("y", d => (vis.radius + 10) * Math.sin(vis.angleScale(d.axis) - Math.PI / 2))
                 .attr("dy", "0.35em")
                 .attr("text-anchor", "middle")
                 .style("font-size", "12px")
+                .style("font-weight", "normal")
                 .text(d => {
-                    console.log(d); // Log the value of d
+                    console.log(d);
                     return `${d.axis} ${d.unit}`;
                 });
         });

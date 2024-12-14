@@ -84,6 +84,32 @@ class ScatterVis {
             .domain(Object.keys(vis.regions))
             .range(d3.schemeTableau10);
 
+        // Add legend
+        vis.legend = vis.svg.append("g")
+            .attr("class", "legend")
+            .attr("transform", `translate(${vis.width - 100}, 0)`);
+
+        const legendData = Object.keys(vis.regions);
+
+        vis.legend.selectAll("rect")
+            .data(legendData)
+            .enter().append("rect")
+            .attr("x", 0)
+            .attr("y", (d, i) => i * 20)
+            .attr("width", 18)
+            .attr("height", 18)
+            .style("fill", d => vis.color(d));
+
+        vis.legend.selectAll("text")
+            .data(legendData)
+            .enter().append("text")
+            .attr("x", 24)
+            .attr("y", (d, i) => i * 20 + 9)
+            .attr("dy", ".35em")
+            .style("text-anchor", "start")
+            .style("font-size", "12px")
+            .text(d => d);
+
         // Wrangle data
         vis.wrangleData();
     }
@@ -147,7 +173,7 @@ class ScatterVis {
             .on("mouseover", function(event, d) {
                 console.log(d); // Print the data object
                 d3.select(this).attr("r", 12).attr("fill-opacity", 1);
-                vis.title.text(d.id); // Change the title to the state name
+                vis.title.text(d.id + "   fertility-Rate: " + d.fertility); // Change the title to the state name
             })
             .on("mouseout", function(event, d) {
                 d3.select(this).attr("r", 10).attr("fill-opacity", 0.7);
